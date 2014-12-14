@@ -9,11 +9,12 @@ class SessionsController < ApplicationController
 		redirect_to rooturl, notice: "Logged in!"
 	else
 		flash[:error] = "Wrong Username or Password"
-		redirect_to rooturl
+		redirect_to root_url
 	end
   end
 
   def destroy
 	session[:userid] = nil
+	redirect_to root_url, notice: "Logged out."
   end
 end
