@@ -5,13 +5,13 @@ class PostsController < ApplicationController
     end	   
 
     def index
-    	@posts = Post.all include: :user
+    	@posts = Post.all.includes(:user)
 	@post = Post.new
     end
 
     def create
-   	@post = Post.new(params[:post])
-   	@post.userid = current_user.id</p>
+   	@post = Post.new(params[post_params])
+   	@post.user_id = current_user.id
     
    	if @post.save
         	redirect_to current_user
