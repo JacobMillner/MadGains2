@@ -4,6 +4,11 @@ class PostsController < ApplicationController
     	params.require(:post).permit(:content, :userid)
     end	   
 
+    def index
+    	@posts = Post.all include: :user
+	@post = Post.new
+    end
+
     def create
    	@post = Post.new(params[:post])
    	@post.userid = current_user.id</p>

@@ -10,6 +10,7 @@
             <img src="/gfx/logo.png">
             <span>Workout App</span>
             <% if current_user %>
+	        <%= link_to "Public Posts", posts_path %>
                 <%= link_to "Log Out", sessions_destroy_path %>
             <% else %>
                 <%= form_tag sessions_create_path do %>
