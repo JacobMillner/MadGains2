@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 	validates :name, presence: true
 	validates :username, uniqueness: true, presence: true
 	validates :email, uniqueness: true, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }
+	has_many :posts
 	
 	private
  
