@@ -16,8 +16,8 @@
         <span class="name"><%= @user.name %></span> @<%= @user.username %>
         <p>
         <%= @user.posts.size %> Posts
-        <span class="spacing">XX Followers</span>
-        <span class="spacing">XX Following</span>
+        <span class="spacing"><%= @user.followers.count %> Followers</span>
+        <span class="spacing"><%= @user.followeds.count %> Following</span>
         </p>
     </div>
 </div>

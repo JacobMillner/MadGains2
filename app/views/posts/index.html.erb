@@ -19,7 +19,6 @@
             </a>
             @<%= post.user.username %>
             <span class="time"><%= time_ago_in_words(post.created_at) %></span>
-	    <%= debug post %>
             <p> <%= post.content %> </p> 
         </div>
     <% end %>
