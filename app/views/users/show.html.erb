@@ -18,6 +18,20 @@
         <%= @user.posts.size %> Posts
         <span class="spacing"><%= @user.followers.count %> Followers</span>
         <span class="spacing"><%= @user.followeds.count %> Following</span>
+
+	<% if current_user and @user != current_user %>
+    		<% if current_user.following? @user %>
+        		<%= form_tag @relationship, method: :delete do %>
+            			<%= submit_tag "Unfollow" %>
+        		<% end %>
+    		<% else %>
+        		<%= form_for @relationship do %>
+            			<%= hidden_field_tag :followed_id, @user.id %>
+            			<%= submit_tag "Follow" %>
+        		<% end %>
+    		<% end %>
+	<% end %>		
+
         </p>
     </div>
 </div>
