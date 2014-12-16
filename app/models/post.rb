@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
 
 	#default_scope order: 'createdat: DESC'
-	default_scope { order('created_at') }
+	default_scope { order('created_at DESC') }
 	#attr_accessible :content, :userid 
 	belongs_to :user
 

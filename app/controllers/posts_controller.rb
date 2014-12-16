@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
     def post_params
-    	params.require(:post).permit(:content, :userid)
+    	params.require(:post).permit(:content, :user_id) 
     end	   
 
     def index
@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     end
 
     def create
-   	@post = Post.new(params[post_params])
+   	@post = Post.new(post_params)
    	@post.user_id = current_user.id
     
    	if @post.save

@@ -3,7 +3,7 @@
     <h1>Create a Post</h1>
     <p>
     <%= form_for @post do |f| %>
-        <%= f.text_area :content, class: 'postText' %>
+        <%= f.text_area(:content, class: 'postText') %>
         <%= f.submit "Post" %>
     <% end %>
     </p>
