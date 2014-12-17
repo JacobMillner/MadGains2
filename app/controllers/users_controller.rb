@@ -25,6 +25,10 @@ class UsersController < ApplicationController
     			followed_id: @user.id
 		).first_or_initialize if current_user
 	end
+	
+	def index
+		@users = User.all
+	end
 
 	def user_params
       		params.require(:user).permit(:avatar_url, :username, :name, :email, :password, :password_confirmation) 
