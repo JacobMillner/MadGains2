@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
 	def new
-		@user = User.new
+		if current_user
+			redirect_to buddies_path
+		else
+			@user = User.new
+		end	
 	end
 
 	
@@ -28,6 +32,16 @@ class UsersController < ApplicationController
 	
 	def index
 		@users = User.all
+	end
+
+	def buddies
+		if current_user
+			@post = Post.new
+			buddies_ids = current_user.followeds.map(&:id).push(current_user.id)
+			@posts = Post.find_all_by_user_id buddies_ids
+		else
+			redirect_to root_url
+		end
 	end
 
 	def user_params
