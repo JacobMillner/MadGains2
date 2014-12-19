@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 		if current_user
 			@post = Post.new
 			buddies_ids = current_user.followeds.map(&:id).push(current_user.id)
-			@posts = Post.find_all_by_user_id buddies_ids
+			@posts = Post.where(user_id: buddies_ids)
 		else
 			redirect_to root_url
 		end
