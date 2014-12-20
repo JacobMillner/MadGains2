@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 	validates :username, uniqueness: true, presence: true
 	validates :email, uniqueness: true, presence: true, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i }
 	has_many :posts
+	has_many :weights
 	has_many :follower_relationships, class_name: "Relationship", foreign_key: "followed_id"
 	has_many :followed_relationships, class_name: "Relationship", foreign_key: "follower_id"
 	has_many :followers, through: :follower_relationships

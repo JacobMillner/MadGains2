@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :weights
+
   resources :relationships
 
   resources :posts
