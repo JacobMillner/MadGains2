@@ -1,0 +1,22 @@
+<% if current_user %>
+<div id="createPost" class="panel right">
+    <h1>Edit Bio:</h1>
+    <p>
+	Comming Soon!
+    </p>
+</div>
+<% end %>
+<div id="posts" class="panel left">
+    <h1>Edit Profile</h1>
+    <div class="madGainsWrapper">
+        <img class="avatar" src="<%= @user.avatar_url %>">
+	To change your avatar, visit www.gravitar.com
+	<p>
+        <span class="name"><%= @user.name %></span> @<%= @user.username %>
+        <p>
+        Weight: <%= @weight.content.first %>
+	Edit
+
+        </p>
+    </div>
+</div>
