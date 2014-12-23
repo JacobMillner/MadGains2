@@ -6,7 +6,7 @@ class WeightsController < ApplicationController
 
 
     def create
-   	@weight = Weight.new(weight_params)
+   	@weight = Weight.new
    	@weight.user_id = current_user.id
     
    	if @weight.save

@@ -1,6 +1,8 @@
 class Weight < ActiveRecord::Base
-	
 	default_scope { order('created_at DESC') }
+	#attr_accessible :content, :userid 
 	belongs_to :user
-	validates :content, :inclusion => 1..500
+
+	validates :content, length: { maximum: 140 }
+
 end
