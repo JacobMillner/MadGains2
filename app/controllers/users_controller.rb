@@ -20,6 +20,18 @@ class UsersController < ApplicationController
 		end
 	end
 
+
+	def edit
+		
+		if current_user
+			@user = current_user
+			@weight = Weight.new
+			@weights = Weight.where(user_id: current_user.id)
+		else
+			redirect_to root_url
+		end
+	end		
+
 	def show
 		@user = User.find(params[:id])
 		@post = Post.new

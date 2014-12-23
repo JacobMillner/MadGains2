@@ -14,9 +14,18 @@
 	<p>
         <span class="name"><%= @user.name %></span> @<%= @user.username %>
         <p>
-        Weight: <%= @weight.content.first %>
+        Weight:
+        <% @weights.each do |weight| %>
+		<% weight.content %>
+	<% end %>
+ 
 	Edit
-
+    	<p>
+    	<%= form_for @weight do |f| %>
+        	<%= f.text_area(:content, class: 'postText') %>
+        	<%= f.submit "Post" %>
+   	<% end %>
+	</p>
         </p>
     </div>
 </div>
