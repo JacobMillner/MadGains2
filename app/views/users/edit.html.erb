@@ -15,17 +15,21 @@
         <span class="name"><%= @user.name %></span> @<%= @user.username %>
         <p>
         Weight:<p>
-        <% @weights.each do |curWeight| %>
-		<% curWeight.content %> 
-		<%= time_ago_in_words(curWeight.created_at) %><p>
+        <% @user.weights.each do |weight| %>
+		<%= weight.content %> 
+		<p>
+		<%= time_ago_in_words(weight.created_at) %><p>
+		<p>	
 	<% end %>
 	<p> 
 	Edit
-    	
+	<div id="createPost">
     	<%= form_for @weight do |f| %>
-        	<%= f.text_area(:content, class: 'postText') %> 
+        	<%= f.text_area :content, class: 'postText' %>
         	<%= f.submit "Submit" %>
-   	<% end %>
+    	<% end %>
+	</div>
+    	
 	</p>
         </p>
     </div>

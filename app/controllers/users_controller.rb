@@ -21,12 +21,11 @@ class UsersController < ApplicationController
 	end
 
 
-	def edit
-		
+	def edit	
 		if current_user
 			@user = current_user
 			@weight = Weight.new
-			@weights = Weight.where(user_id: current_user.id)
+			#@weights = Weight.where(user_id: current_user.id)
 		else
 			redirect_to root_url
 		end
