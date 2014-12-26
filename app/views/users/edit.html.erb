@@ -14,13 +14,10 @@
 	<p>
         <span class="name"><%= @user.name %></span> @<%= @user.username %>
         <p>
-        Weight:<p>
-        <% @user.weights.each do |weight| %>
-		<%= weight.content %> 
-		<p>
-		<%= time_ago_in_words(weight.created_at) %><p>
-		<p>	
-	<% end %>
+        Weight:
+	<%= @user.weights.first.content %>
+	<p>
+	<%= time_ago_in_words(@user.weights.first.content) %>
 	<p> 
 	Edit
 	<div id="createPost">
