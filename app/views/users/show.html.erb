@@ -11,7 +11,7 @@
 <% end %>
 <div id="posts" class="panel left">
     <h1>Your MadGains Profile
-    <% if current_user %>
+    <% if @user.id == current_user.id %>
     	<div align="right"><%= link_to "Edit", edit_path %></div>
     <% end %>
     </h1> 
