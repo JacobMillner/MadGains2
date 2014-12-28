@@ -25,11 +25,20 @@ class UsersController < ApplicationController
 		if current_user
 			@user = current_user
 			@weight = Weight.new
-			#@weights = Weight.where(user_id: current_user.id)
 		else
 			redirect_to root_url
 		end
 	end		
+
+	def update
+	    @user = current_user
+	    if @user.update_attributes(user_params)
+	      flash[:success] = "Profile updated"
+	      redirect_to @user
+	    else
+	      render 'edit'
+	    end
+	  end
 
 	def show
 		@user = User.find(params[:id])
@@ -56,7 +65,9 @@ class UsersController < ApplicationController
 	end
 
 	def user_params
-      		params.require(:user).permit(:avatar_url, :username, :name, :email, :password, :password_confirmation) 
+      		params.require(:user).permit(:avatar_url, :username, :name, :email, :bio, :password, :password_confirmation) 
     	end
+	
+	
 
 end

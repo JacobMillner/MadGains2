@@ -2,7 +2,11 @@
 <div id="createPost" class="panel right">
     <h1>Edit Bio:</h1>
     <p>
-	Comming Soon!
+    	<%= form_for @user do |f| %>
+		<%= f.label :bio %>
+        	<%= f.text_area :bio %>
+        	<%= f.submit "Submit" %>
+    	<% end %>
     </p>
 </div>
 <% end %>
@@ -19,9 +23,9 @@
 	<p>
 	<%= time_ago_in_words(@user.weights.first.content) %>
 	<p> 
-	Edit
 	<div id="createPost">
     	<%= form_for @weight do |f| %>
+		<%= f.label :weight %>
         	<%= f.text_area :content, class: 'postText' %>
         	<%= f.submit "Submit" %>
     	<% end %>
