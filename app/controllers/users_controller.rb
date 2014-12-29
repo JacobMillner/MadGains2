@@ -41,13 +41,18 @@ class UsersController < ApplicationController
 	  end
 
 	def show
-		@user = User.find(params[:id])
-		@post = Post.new
+		if current_user
+			@user = User.find(params[:id])
+			@post = Post.new
 
-		@relationship = Relationship.where(
-    			follower_id: current_user.id,
-    			followed_id: @user.id
-		).first_or_initialize if current_user
+			@relationship = Relationship.where(
+    				follower_id: current_user.id,
+    				followed_id: @user.id
+			).first_or_initialize if current_user
+		else
+			flash[:error] = "You must be logged in to view this page."
+			redirect_to root_url
+		end
 	end
 	
 	def index
@@ -60,6 +65,7 @@ class UsersController < ApplicationController
 			buddies_ids = current_user.followeds.map(&:id).push(current_user.id)
 			@posts = Post.where(user_id: buddies_ids)
 		else
+			flash[:error] = "You must be logged in to view this page."
 			redirect_to root_url
 		end
 	end
@@ -67,7 +73,5 @@ class UsersController < ApplicationController
 	def user_params
       		params.require(:user).permit(:avatar_url, :username, :name, :email, :bio, :password, :password_confirmation) 
     	end
-	
-	
 
 end
