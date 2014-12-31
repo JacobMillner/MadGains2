@@ -1,7 +1,5 @@
-<div id="posts" class="panel left">
     <h1>Public Profile</h1>
     <% @users.each do |user| %>
-    <div class="madgainsWrapper">
         <a href="<%= user_path user %>">
         <img class="avatar" src="<%= user.avatar_url %>">
         <span class="name"><%= user.name %></span>
@@ -15,6 +13,4 @@
         <% if user.posts.first %>
         <p><%= user.posts.first.content %></p>
         <% end %>
-    </div>
     <% end %>
-</div>

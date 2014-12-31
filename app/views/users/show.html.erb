@@ -1,5 +1,4 @@
 <% if current_user %>
-<div id="createPost" class="panel right">
     <h1>Create a Post</h1>
     <p>
     <%= form_for @post do |f| %>
@@ -7,15 +6,12 @@
         <%= f.submit "Post" %>
     <% end %>
     </p>
-</div>
 <% end %>
-<div id="posts" class="panel left">
     <h1>Your MadGains Profile
     <% if @user.id == current_user.id %>
-    	<div align="right"><%= link_to "Edit", edit_path %></div>
+    	<%= link_to "Edit", edit_path %>
     <% end %>
     </h1> 
-    <div class="madGainsWrapper">
         <img class="avatar" src="<%= @user.avatar_url %>">
         <span class="name"><%= @user.name %></span> @<%= @user.username %>
         <p>
@@ -36,21 +32,14 @@
     		<% end %>
 	<% end %>		
 
-        </p>
 	<p>
 		<%= @user.bio %>
 	</p>
-    </div>
-</div>
-<div class="panel left">
     <h1>Your Posts</h1>
     <% @user.posts.each do |post| %>
-        <div class="madGainsWrapper">
             <img class="avatar" src="<%= @user.avatar_url %>">
             <span class="name"><%= @user.name %></span>
             @<%= @user.username %>
             <span class="time"><%= time_ago_in_words(post.created_at) %></span>
             <p> <%= post.content %> </p>
-        </div>
     <% end %>
-</div>

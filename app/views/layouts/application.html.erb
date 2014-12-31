@@ -4,9 +4,7 @@
     <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
-    <header>
 	<%= render 'layouts/topMenu' %>
-        <div class="wrapper">
             <img src="/gfx/logo.png">
             <% if current_user %>
 		<%= link_to "Public Posts", posts_path %>
@@ -21,20 +19,11 @@
                     <%= submit_tag "Log In" %>
                 <% end %>
             <% end %>
-        </div>
-    </header>
-    <div id="content">
-        <div class="wrapper">
+
             <% flash.each do |name, msg| %>
                 <%= content_tag :div, msg, class: "flash #{name}" %>
             <% end %>
             <%= yield %>
-        </div>
-    </div>
-    <footer>
-        <div class="wrapper">
             MadGains - A Workout App<img src="/gfx/logo-nettuts.png">
-        </div>
-    </footer>
 </body>
 </html>
