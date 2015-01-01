@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -18,7 +18,7 @@
 
   </head>
 <body>
-	<%= render 'layouts/topMenu' %>
+	<%= render 'layouts/topMenu' %> 
             <img src="/gfx/logo.png">
             <% if current_user %>
 		<%= link_to "Public Posts", posts_path %>
