@@ -50,7 +50,7 @@ class UsersController < ApplicationController
     				followed_id: @user.id
 			).first_or_initialize if current_user
 		else
-			flash[:error] = "You must be logged in to view this page."
+			flash[:warning] = "You must be logged in to view this page."
 			redirect_to root_url
 		end
 	end
@@ -65,7 +65,7 @@ class UsersController < ApplicationController
 			buddies_ids = current_user.followeds.map(&:id).push(current_user.id)
 			@posts = Post.where(user_id: buddies_ids)
 		else
-			flash[:error] = "You must be logged in to view this page."
+			flash[:warning] = "You must be logged in to view this page."
 			redirect_to root_url
 		end
 	end

@@ -16,7 +16,7 @@ class PostsController < ApplicationController
    	if @post.save
         	redirect_to current_user
         else
-        	flash[:error] = "Problem!"
+        	flash[:danger] = "Problem!"
         	redirect_to current_user
      	end
     end

@@ -9,7 +9,7 @@ class WeightsController < ApplicationController
    	if @weight.save
         	redirect_to current_user
         else
-        	flash[:error] = "Problem!"
+        	flash[:danger] = "Problem!"
         	redirect_to current_user
      	end
     end

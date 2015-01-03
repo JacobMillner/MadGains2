@@ -8,7 +8,7 @@ class RelationshipsController < ApplicationController
         if @relationship.save
             redirect_to User.find params[:followed_id]
         else
-            flash[:error] = "Couldn't Follow"
+            flash[:warning] = "Couldn't Follow"
             redirect_to root_url
         end
     end
