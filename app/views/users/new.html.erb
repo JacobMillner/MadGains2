@@ -1,10 +1,13 @@
-<div class="jumbotron">
-<img src="/gfx/frog.jpg">
- 
-  <h1>New to MadGains?</h1>
-   
+<div class="col-md-8">
+    <img class="img-responsive" src="/gfx/frog.jpg" />
+</div>
 
-  <%= form_for @user do |f| %>
+<div class="col-md-4">
+    <fieldset>
+  <legend>New to MadGainz?</legend>
+   
+    <form class="form-horizontal">
+        <%= form_for @user, :html => {:class => "form-horizontal center"} do |f| %>
     <% if @user.errors.any? %>
       <ul>
         <% @user.errors.full_messages.each do |message| %>
@@ -12,13 +15,46 @@
         <% end %>
       </ul>
     <% end %>
- 
-    <%= f.text_field :email, placeholder: "email" %>
-    <%= f.text_field :username, placeholder: "username" %>
-    <%= f.text_field :name, placeholder: "name" %>
-    <%= f.password_field :password, placeholder: "password" %>
-    <%= f.password_field :password_confirmation, placeholder: "password" %>
-    <%= f.submit "Create Account" %>
-  <% end %>
+    <div class="form-group">
+        <%= f.label :email, "Email", class: "col-md-4 control-label" %>
+        <div class="col-md-8"> 
+            <%= f.text_field :email, class: "form-control" %>
+        </div>
+    </div>
 
+    <div class="form-group">
+        <%= f.label :username, "Username", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+            <%= f.text_field :username, class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :name, "Name", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+            <%= f.text_field :name, class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :password, "Password", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+            <%= f.password_field :password, class: "form-control" %>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :password_confirmation, "Re-enter Password", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+            <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+    </div>
+
+    <div style="text-align:center">
+        <%= f.submit "Create Account", class: "btn btn-default btn-primary" %>
+    </div>
+
+<% end %>
+
+</fieldset>
 </div>
