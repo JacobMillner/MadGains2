@@ -37,20 +37,23 @@
         </p>
     </div>
     <h1>Your Posts</h1>
-    <div class="panel panel-default">
         <% @user.posts.each do |post| %>
+    <div class="panel panel-default">
             <div class="panel-heading">
             <img class="avatar" src="<%= @user.avatar_url %>">
             <span class="name"><%= @user.name %></span>
             @<%= @user.username %>
             <span class="label label-primary"><%= time_ago_in_words(post.created_at) %> Ago</span>
     </div>
-    <div class="panel-body">
+    <div class="panel-body"> 
              <%= post.content %>
-        </div>
+         </div>
+    </div>
+
         <% end %>
-    </div>
-    </div>
+</div>
+
+<!-- Post Box -->
     <div class="col-md-4">
         <div class="panel panel-default">
 <% if current_user %>
