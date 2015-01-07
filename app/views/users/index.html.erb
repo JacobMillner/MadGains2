@@ -1,16 +1,18 @@
     <h1>Public Profile</h1>
     <% @users.each do |user| %>
+        <div class="panel panel-default">
+            <div class="panel-body">
         <a href="<%= user_path user %>">
         <img class="avatar" src="<%= user.avatar_url %>">
         <span class="name"><%= user.name %></span>
         </a>
         @<%= user.username %>
-        <p>
-        <%= user.posts.size %> Posts
-        <span class="spacing"><%= user.followers.count %> Followers</span>
-        <span class="spacing"><%= user.followeds.count %> Following</span>
-        </p>
+    <span class="label label-default"> <%= user.posts.size %> Posts</span>
+        <span class="label label-default"><%= user.followers.count %> Followers</span>
+        <span class="label label-default"><%= user.followeds.count %> Following</span>
         <% if user.posts.first %>
-        <p><%= user.posts.first.content %></p>
+            <div class="panel-footer"><%= user.posts.first.content %></div>
         <% end %>
+        </div>
+</div>
     <% end %>
