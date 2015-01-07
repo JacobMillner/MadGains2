@@ -1,23 +1,23 @@
-<% if current_user %>
-    <h1>Create a Post</h1>
-    <p>
-    <%= form_for @post do |f| %>
-        <%= f.text_area(:content, class: 'postText') %>
-        <%= f.submit "Post" %>
-    <% end %>
-    </p>
-<% end %>
-    <h1>Your MadGains Profile
+<div class="col-md-8">
+<h1>Your MadGains Profile
     <% if @user.id == current_user.id %>
     	<%= link_to "Edit", edit_path %>
     <% end %>
     </h1> 
+    <div class="well">
         <img class="avatar" src="<%= @user.avatar_url %>">
         <span class="name"><%= @user.name %></span> @<%= @user.username %>
-        <p>
+    <p>
+    <span class="label label-default">
         <%= @user.posts.size %> Posts
+    </span>
+
+    <span class="label label-default">
         <span class="spacing"><%= @user.followers.count %> Followers</span>
+    </span>
+    <span class="label label-default">
         <span class="spacing"><%= @user.followeds.count %> Following</span>
+    </span>
 
 	<% if current_user and @user != current_user %>
     		<% if current_user.following? @user %>
@@ -34,12 +34,34 @@
 
 	<p>
 		<%= @user.bio %>
-	</p>
+        </p>
+    </div>
     <h1>Your Posts</h1>
-    <% @user.posts.each do |post| %>
+    <div class="panel panel-default">
+        <% @user.posts.each do |post| %>
+            <div class="panel-heading">
             <img class="avatar" src="<%= @user.avatar_url %>">
             <span class="name"><%= @user.name %></span>
             @<%= @user.username %>
-            <span class="time"><%= time_ago_in_words(post.created_at) %></span>
-            <p> <%= post.content %> </p>
+            <span class="label label-primary"><%= time_ago_in_words(post.created_at) %> Ago</span>
+    </div>
+    <div class="panel-body">
+             <%= post.content %>
+        </div>
+        <% end %>
+    </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+<% if current_user %>
+    <div class="panel-heading"><h1>Create a Post</h1></div>
+    <div class="panel-body">
+<%= form_for @post do |f| %>
+    <%= f.text_area(:content, class: 'postText') %>
+    <p><%= f.submit "Post", class: "btn btn-success" %></p>
     <% end %>
+<% end %>
+    </div>
+    </div>
+    </div>
+
