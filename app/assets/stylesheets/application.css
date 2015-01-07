@@ -13,3 +13,10 @@
  *
  *= require_self
  */
+
+.space-10 {
+    display: block;
+    padding: 10px;
+    margin-bottom: 100px; /* SIMPLY SET THIS PROPERTY AS MUCH AS YOU WANT. This changes the space below box1 */
+    text-align: justify;
+}

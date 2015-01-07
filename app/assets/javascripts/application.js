@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 
+
+//profile edit jquery
+$(document).ready(function(){
+  $("#test2").hide();
+  $("#test").click(function(){
+    $("#test2").show(1000);
+  });
+});
+
