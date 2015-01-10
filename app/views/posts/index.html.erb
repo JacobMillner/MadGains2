@@ -1,21 +1,21 @@
 <div class="col-md-8">
     <h1>Public Posts</h1>
-    <% @posts.each do |post| %>
     <div class="panel panel-default">
+    <% @posts.each do |post| %>
         <div class="panel-heading">
             <a href="<%= user_path post.user %>">
             <img class="avatar" src="<%= post.user.avatar_url %>">
             <span class="name"><%= post.user.name %></span>
             </a>
             @<%= post.user.username %>
-        <span class="label label-primary"><%= time_ago_in_words(post.created_at) %></span>
-    </div>
-    <div class="panel-body">
-        <p> <%= post.content %> </p> 
-    </div>
+            <span class="label label-primary"><%= time_ago_in_words(post.created_at) %></span>
+        </div>
+        <div class="panel-body">
+            <p> <%= post.content %> </p> 
         </div>
     <% end %>
-<%= will_paginate @posts %>
+    </div>
+    <%= will_paginate @posts %>
 </div>
 
 

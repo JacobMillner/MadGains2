@@ -37,7 +37,7 @@
         </p>
     </div>
     <h1>Your Posts</h1>
-        <% @user.posts.each do |post| %>
+        <% @posts.each do |post| %>
     <div class="panel panel-default">
             <div class="panel-heading">
             <img class="avatar" src="<%= @user.avatar_url %>">
@@ -51,7 +51,8 @@
     </div>
 
         <% end %>
-</div>
+    </div>
+    <%= will_paginate @posts %>
 
 <!-- Post Box -->
     <div class="col-md-4">

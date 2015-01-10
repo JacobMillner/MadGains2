@@ -44,6 +44,7 @@ class UsersController < ApplicationController
 		if current_user
 			@user = User.find(params[:id])
 			@post = Post.new
+            @posts = @user.posts.paginate(:page => params[:page], :per_page => 6)
 
 			@relationship = Relationship.where(
     				follower_id: current_user.id,
