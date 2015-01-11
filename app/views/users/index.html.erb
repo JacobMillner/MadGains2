@@ -13,6 +13,8 @@
         <% if user.posts.first %>
             <div class="panel-footer"><%= user.posts.first.content %></div>
         <% end %>
-        </div>
+    </div>
 </div>
     <% end %>
+    <%= will_paginate @users %>
+
