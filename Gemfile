@@ -43,5 +43,6 @@ gem 'twitter-bootswatch-rails-helpers'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# pagination gem
+# pagination gems
 gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'

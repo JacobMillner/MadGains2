@@ -64,7 +64,7 @@ class UsersController < ApplicationController
 		if current_user
 			@post = Post.new
 			buddies_ids = current_user.followeds.map(&:id).push(current_user.id)
-			@posts = Post.where(user_id: buddies_ids)
+			@posts = Post.where(user_id: buddies_ids).paginate(:page => params[:page], :per_page => 6)
 		else
 			flash[:warning] = "You must be logged in to view this page."
 			redirect_to root_url

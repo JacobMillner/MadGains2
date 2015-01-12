@@ -51,8 +51,8 @@
     </div>
 
         <% end %>
+    <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
     </div>
-    <%= will_paginate @posts %>
 
 <!-- Post Box -->
     <div class="col-md-4">
