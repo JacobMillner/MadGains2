@@ -21,14 +21,24 @@
   </head>
   <body>
 	<%= render 'layouts/topMenu' %>
+
     <div class="container">
-            <% flash.each do |name, msg| %>
-                <%= content_tag :div, msg, class: "alert alert-dismissable alert-#{name}" %>
-            <% end %>
+        <% if flash.any? %>
+        <% flash.each do |name, msg| %>
+            <%=
+                   content_tag(:div, msg, class: "alert alert-#{name} fade in") do 
+                   concat content_tag(:button, 'x', class: "close", data: { dismiss: 'alert' })
+                   concat msg
+               end
+            %>
+    <% end %>
+    <% end %>
+    
+    </div>
+
 
     <%= yield %>
 
-    </div>
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
