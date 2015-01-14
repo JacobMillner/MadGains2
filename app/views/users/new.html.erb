@@ -1,4 +1,5 @@
-<div class="col-md-8">
+<div class="col-md-11">
+<div class="col-md-8"> 
     <img class="img-responsive" src="/gfx/frog.jpg" />
 </div>
 
@@ -6,7 +7,7 @@
     <fieldset>
   <legend>New to MadGainz?</legend>
    
-    <form class="form-horizontal">
+    <div class="form-horizontal">
         <%= form_for @user, :html => {:class => "form-horizontal center"} do |f| %>
     <% if @user.errors.any? %>
       <ul>
@@ -14,8 +15,8 @@
           <li><%= message %></li>
         <% end %>
       </ul>
-    <% end %>
-    <div class="form-group">
+  <% end %>
+        <div class="form-group">
         <%= f.label :email, "Email", class: "col-md-4 control-label" %>
         <div class="col-md-8"> 
             <%= f.text_field :email, class: "form-control" %>
@@ -57,4 +58,5 @@
 <% end %>
 
 </fieldset>
+</div>
 </div>
