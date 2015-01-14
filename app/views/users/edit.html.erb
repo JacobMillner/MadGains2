@@ -13,12 +13,14 @@
     	<%= form_for @weight do |f| %>
 		<%= f.label :weight %>
             <div class="input-group">
-        	<%= f.text_field :content, :placeholder => @user.weights.first.content, class: "form-control"  %>
+		    <%= f.text_field :content, :placeholder => (@user.weights.first.content if @user.weights.first) , class: "form-control"  %>
             <span class="input-group-btn">
         	    <%= f.submit "Submit", class: "btn btn-success" %>
             </span>
-            </div>
-	        <%= time_ago_in_words(@user.weights.first.content) %>
+    </div>
+    		<% if @user.weights.first %>
+	    <%= time_ago_in_words(@user.weights.first.content) %>
+    		<% end %>
     	<% end %>
         </div>
     	</div>
