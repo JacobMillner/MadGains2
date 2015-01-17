@@ -14,6 +14,10 @@
  *= require_self
  */
 
+//= require evil-icons
+
+
+/* this code is to make sure navbar deosnt overlap with anything */
 .space-10 {
     display: block;
     padding: 10px;

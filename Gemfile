@@ -46,3 +46,6 @@ gem 'twitter-bootswatch-rails-helpers'
 # pagination gems
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
+
+#gem for evil-icons
+gem 'evil_icons'

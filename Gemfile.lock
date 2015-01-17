@@ -48,6 +48,7 @@ GEM
     coffee-script-source (1.8.0)
     commonjs (0.2.7)
     erubis (2.7.0)
+    evil_icons (1.5.0)
     execjs (2.2.2)
     hike (1.2.3)
     i18n (0.6.11)
@@ -141,6 +142,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   coffee-rails (~> 4.0.0)
+  evil_icons
   jbuilder (~> 2.0)
   jquery-rails
   rails (= 4.1.8)
