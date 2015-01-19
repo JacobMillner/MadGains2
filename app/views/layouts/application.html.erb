@@ -26,8 +26,9 @@
         <% if flash.any? %>
         <% flash.each do |name, msg| %>
             <%=
-                   content_tag(:div, msg, class: "alert alert-#{name} fade in") do 
-                   concat content_tag(:evil_icon, 'ei-close', class: "close", data: { dismiss: 'alert' })
+                content_tag(:div, msg, class: "alert alert-#{name} fade in") do 
+                    #concat (evil_icon 'ei-close', size: :s, class: "close", data: { dismiss: 'alert' })
+                   concat content_tag(:button, 'X', class: "close", data: { dismiss: 'alert' })
                    concat msg
                end
             %>
@@ -38,7 +39,9 @@
 
 
     <%= yield %>
-  <%= evil_icons_sprite %>
+
+
+    <%= evil_icons_sprite %>
 
     <!-- Javascripts
     ================================================== -->
