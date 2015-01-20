@@ -49,3 +49,9 @@ gem 'will_paginate-bootstrap'
 
 #gem for evil-icons
 gem 'evil_icons'
+
+#chrct gems
+gem 'chartkick'
+
+#date grouping
+gem 'groupdate'

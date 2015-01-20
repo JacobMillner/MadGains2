@@ -9,7 +9,8 @@
         <br style="margin-bottom:50px;"/>
 
         <div class="col-md-6">
-        <div class="form-group">
+<%= line_chart @user.weights.group(:created_at).maximum(:content) %> 
+		<div class="form-group">
     	<%= form_for @weight do |f| %>
             <%= f.label :weight %>
             <div class="input-group">
