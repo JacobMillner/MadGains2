@@ -11,7 +11,7 @@
         <div class="col-md-6">
         <div class="form-group">
     	<%= form_for @weight do |f| %>
-		<%= f.label :weight %>
+            <%= f.label :weight %>
             <div class="input-group">
 		    <%= f.text_field :content, :placeholder => (@user.weights.first.content if @user.weights.first) , class: "form-control"  %>
             <span class="input-group-btn">
@@ -19,7 +19,7 @@
             </span>
     </div>
     		<% if @user.weights.first %>
-	    <%= time_ago_in_words(@user.weights.first.content) %>
+	            <%= time_ago_in_words(@user.weights.first.content) %> Ago.
     		<% end %>
     	<% end %>
         </div>

@@ -1,4 +1,4 @@
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -11,10 +11,10 @@
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <% if current_user %>
-            <li class="active"><%= link_to "Public Posts", posts_path %></li> 
-            <li><%= link_to "Public Profiles", users_path %></li>
-            <li><%= link_to "Buddies' Posts", buddies_path %></li>
-            <li><%= link_to "My Profile", current_user %></li>
+              <li class="<%= 'active' if current_page?(posts_path) %>"><%= link_to "Public Posts", posts_path %></li> 
+            <li class="<%= 'active' if current_page?(users_path) %>"><%= link_to "Public Profiles", users_path %></li>
+           <li class="<%= 'active' if current_page?(buddies_path) %>"> <%= link_to "Buddies' Posts", buddies_path %></li>
+           <li class="<%= 'active' if current_page?(current_user) %>"> <%= link_to "My Profile", current_user %></li>
         <% else %>
             <li class="dropdown">
             <a class ="dropdown-toggle" data-toggle="dropdown" href="#">Login<b class="caret"></b></a>   
