@@ -22,7 +22,7 @@
 	<%= render 'layouts/topMenu' %>
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
-    <div class="container">
+    <div class="container" id="flash">
         <% if flash.any? %>
         <% flash.each do |name, msg| %>
             <%=
