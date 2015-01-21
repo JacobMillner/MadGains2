@@ -18,11 +18,13 @@
             <span class="input-group-btn">
         	    <%= f.submit "Submit", class: "btn btn-success" %>
             </span>
-    </div>
-    		<% if @user.weights.first %>
-	            <%= time_ago_in_words(@user.weights.first.content) %> Ago.
+        </div>
+        <!-- TODO: this is a temp fix to weights being out of range --> 
+        <% if @user.weights.first && @user.weights.first.content.to_f <= 400 %>
+	            <%= time_ago_in_words(@user.weights.first.content) %>
     		<% end %>
-    	<% end %>
+        <% end %>
+         Ago.
         </div>
     	</div>
     </div>
