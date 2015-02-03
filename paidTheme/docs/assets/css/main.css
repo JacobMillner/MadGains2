@@ -1,0 +1,11 @@
+.bs-docs-header {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-size: 24px;
+	text-align: left;
+}
+
+.bs-docs-header h1 {
+	font-size: 32px;
+	line-height: 1;
+}

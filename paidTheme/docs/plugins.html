@@ -1,0 +1,2074 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Plugins | Docs</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/plugins/highlight/styles/github.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <a class="sr-only" href="#content">Skip to main content</a>
+    
+<header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="../" class="navbar-brand">Dynamic <small>v1.0.1</small></a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <li >
+        	<a href="index.html">Get started</a>
+        </li>
+        <li >
+          <a href="css.html">CSS</a>
+        </li>
+       <!--  <li >
+         <a href="elements.html">Elements</a>
+       </li> -->
+        <li  class="active">
+        	<a href="plugins.html">Plugins</a>
+        </li>
+        <li >
+        	<a href="credits.html">Credits</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="https://wrapbootstrap.com/user/jorolino">More themes</a></li>
+        <li><a href="http://getbootstrap.com/" target="_blank">Bootstrap docs</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+    <!-- Docs page layout -->
+    <div class="bs-docs-header" id="content">
+      <div class="container">
+        <h1>Plugins</h1>
+        <p>Information about included plugins in template</p>
+      </div>
+    </div>
+
+    <div class="container bs-docs-container">
+
+      <div class="row">
+        <div class="col-md-9" role="main">
+          
+<div class="bs-docs-section">
+	<h1 id="plugins" class="page-header">Plugins</h1>
+	<p class="lead">Description of all plugins inlcuded in Dynamic theme, all plugins are included in <strong>/plugins</strong> folder grouped semantically</p>
+</div>
+
+<div class="bs-docs-section">
+	
+	<h1 id="dynamic" class="page-header">Dynamic plugin</h1>
+	<p class="lead">This is custom plugin who control the whole template logic and some ui functions</p>
+
+	<p>Plugin is located in <strong>js/jquery.Dynamic.js</strong> directory. Plugin is included in every page do not remove :)</p>
+	<pre><code>&lt;script src=&quot;js/jquery.Dynamic.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<h2>Usage</h2>
+	<p>Call the plugin in your main.js like this</p>
+	<pre><code> //------------- Init our plugin -------------//
+$(&#39;body&#39;).dynamic({
+    customScroll: {
+        color: &#39;#fff&#39;, //color of custom scroll
+        rscolor: &#39;#95A5A6&#39;, //color of right sidebar
+        size: &#39;3px&#39;, //size in pixels
+        opacity: &#39;1&#39;, //opacity
+        alwaysVisible: false //disable hide in
+    },
+    header: {
+        fixed: true //fixed header
+    },
+    breadcrumbs: {
+        auto: true, //auto populate breadcrumbs via js if is false you need to provide own markup see for example.
+        homeicon: &#39;im-home6&#39; //home icon 
+    },
+    sidebar: {
+        fixed: true,//fixed sidebar
+        rememberToggle: true, //remember if sidebar is hided
+        offCanvas: false //make sidebar offcanvas in tablet and small screens
+    },
+    rightSidebar: {
+        fixed: true,//fixed sidebar
+        rememberToggle: true//remember if sidebar is hided
+    },
+    sideNav : {
+        toggleMode: true, //close previous open submenu before expand new
+        showArrows: true,//show arrow to indicate sub
+        sideNavArrowIcon: &#39;l-arrows-right&#39;, //arrow icon for navigation
+        subOpenSpeed: 200,//animation speed for open subs
+        subCloseSpeed: 300,//animation speed for close subs
+        animationEasing: &#39;linear&#39;,//animation easing
+        absoluteUrl: false, //put true if use absolute path links. example http://www.host.com/dashboard instead of /dashboard
+        subDir: &#39;&#39; //if you put template in sub dir you need to fill here. example &#39;/html&#39;
+    },
+    panels: {
+        refreshIcon: &#39;fa fa-circle-o&#39;,//refresh icon for panels
+        toggleIcon: &#39;fa fa-angle-up&#39;,//toggle icon for panels
+        collapseIcon: &#39;fa fa-angle-down&#39;,//colapse icon for panels
+        closeIcon: &#39;fa fa-times&#39;, //close icon
+        showControlsOnHover: false,//Show controls only on hover.
+        loadingEffect: &#39;rotateplane&#39;,//loading effect for panels. bounce, none, rotateplane, stretch, orbit, roundBounce, win8, win8_linear, ios, facebook, rotation, pulse.
+        loaderColor: &#39;#616469&#39;,
+        rememberSortablePosition: true //remember panel position
+    },
+    accordion: {
+        toggleIcon: &#39;l-arrows-minus s16&#39;,//toggle icon for accrodion
+        collapseIcon: &#39;l-arrows-plus s16&#39;//collapse icon for accrodion
+    },
+    tables: {
+        responsive: true, //make tables resposnive
+        customscroll: true //ativate custom scroll for responsive tables
+    },
+    alerts: {
+        animation: true, //animation effect toggle
+        closeEffect: &#39;bounceOutDown&#39; //close effect for alerts see http://daneden.github.io/animate.css/
+    },
+    dropdownMenu: {
+        animation: true, //animation effect for dropdown
+        openEffect: &#39;fadeIn&#39;,//open effect for menu see http://daneden.github.io/animate.css/
+    }
+});</code></pre>
+
+	<h3>Options</h3>
+	<p>All options are commented so change it if you like</p>	
+
+	<h3>Access some object or public function for template</h3>
+	<p>Lets say you want to hide left sidebar you need to call this code</p>
+
+	<pre><code>//hide leftsidebar
+$(&#39;body&#39;).data(&#39;dynamic&#39;).hideLeftSidebar();</code></pre>
+
+
+	<h2>Methods</h2>
+	<p>Here is the full list of public methods</p>
+
+	<h3>.getBreakPoint()</h3>
+	<p>Get the current breakpoint ( aviable values are - large, laptop, tablet, phone )</p>
+	<pre><code>$(&#39;body&#39;).data(&#39;dynamic&#39;).getBreakPoint();</code></pre>
+
+
+	<h3>.fixedHeader(val)</h3>
+	<p>Make header fixed or not, use true or false</p>
+	<pre><code>//make header fixed
+$(&#39;body&#39;).data(&#39;dynamic&#39;).fixedHeader(true);</code></pre>
+
+
+	<h3>.fixedSidebar(val)</h3>
+	<p>Make sidebar fixed or not, use true or false</p>
+	<pre><code>//make sidebar fixed
+$(&#39;body&#39;).data(&#39;dynamic&#39;).fixedSidebar(true);</code></pre>
+
+
+	<h3>.removeFixedSidebar(val)</h3>
+	<p>Remove fixed sidebar, use left or right</p>
+	<pre><code>//remove fixed sidebar
+$(&#39;body&#39;).data(&#39;dynamic&#39;).removeFixedSidebar(&#39;left&#39;);</code></pre>
+
+
+	<h3>.hideLeftSidebar()</h3>
+	<p>Hide left sidebar</p>
+	<pre><code>$(&#39;body&#39;).data(&#39;dynamic&#39;).hideLeftSidebar();</code></pre>
+
+
+	<h3>.showLeftSidebar()</h3>
+	<p>Show left sidebar</p>
+	<pre><code>$(&#39;body&#39;).data(&#39;dynamic&#39;).showLeftSidebar();</code></pre>
+
+	
+	<h3>.hideRightSidebar()</h3>
+	<p>Hide right sidebar</p>
+	<pre><code>$(&#39;body&#39;).data(&#39;dynamic&#39;).hideRightSidebar();</code></pre>
+
+
+	<h3>.showRightSidebar()</h3>
+	<p>Show right sidebar</p>
+	<pre><code>$(&#39;body&#39;).data(&#39;dynamic&#39;).showRightSidebar();</code></pre>
+
+
+	<p>If you want some method dont hesitate to contact us</p>
+	
+</div>
+
+<div class="bs-docs-section" id="core-plugins">
+
+	<div class="bs-callout bs-callout-warning">
+	    <h4>Core plugins</h4>
+	    <p>This section contain list of core plugins in order template to work do not remove it in your page.</p>
+	</div>
+
+	<h1 id="bootstrap" class="page-header">Bootstrap plugin</h1>
+	<p class="lead">Bootstrap plugin include some core function not only in sprflat admin but in bootstrap system as well</p>
+
+	<p>Plugin is located in <strong>js/bootstrap/bootstrap.js</strong> directory. Plugin is included in every page do not remove :)</p>
+	<pre><code>&lt;!-- Bootstrap plugins --&gt;
+&lt;script src=&quot;js/bootstrap/bootstrap.js&quot;&gt;&lt;/script&gt;    </code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://getbootstrap.com/javascript/" target="_blank">http://getbootstrap.com/javascript/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="jrespond" class="page-header">jRespond</h1>
+	<p class="lead">jRespond is a simple way to globally manage JavaScript on responsive websites.</p>
+
+	<p>Plugin is located in <strong>js/jRespond.min.js</strong> Plugin is included in every page do not remove ever.</p>
+	<pre><code>&lt;!-- Core plugins ( not remove ever) --&gt;
+&lt;script src=&quot;js/jRespond.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Plugin init is used in jquery.SprFlat plugin so you not need to make anything in order to work.</p>
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="https://github.com/ten1seven/jRespond" target="_blank">https://github.com/ten1seven/jRespond</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="pace" class="page-header">Pace loader</h1>
+	<p class="lead">Get a beautiful progress indicator for your page load and ajax navigation.</p>
+
+	<p>Plugin is located in <strong>plugins/core/pace/pace.min.js</strong> Plugin is included in every page do not remove ever.</p>
+	<pre><code>&lt;!-- Load pace first --&gt;
+&lt;script src=&quot;plugins/core/pace/pace.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Plugin is init after you include it to page</p>
+	<p>If you use less just import the pace styling or modify it :)</p>
+	<pre><code>@import &quot;plugins/pace.less&quot;;</code></pre>
+
+
+	<p>If not use less styling for plugin is located in <strong>css/plugins.css</strong> file</p>
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://github.hubspot.com/pace/docs/welcome/" target="_blank">http://github.hubspot.com/pace/docs/welcome/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="slimscroll" class="page-header">Slimscroll</h1>
+	<p class="lead">Slimscroll is plugin that transforms any div into a scrollable area with a nice scrollbar - similar to the one Facebook and Google started using in their products recently. slimScroll doesn't occupy any visual space as it only appears on a user initiated mouse-over. User can drag the scrollbar or use mouse-wheel to change the scroll value.</p>
+
+	<p>Plugin is located in <strong>plugins/core/slimscroll/</strong> Plugin is included in every page do not remove ever.</p>
+	<pre><code>&lt;!-- Custom scroll for sidebars --&gt;
+&lt;script src=&quot;plugins/core/slimscroll/jquery.slimscroll.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;plugins/core/slimscroll/jquery.slimscroll.horizontal.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Plugin is used for all custom scrollbars in template ( sidebars, tables etc )</p>
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://rocha.la/jQuery-slimScroll" target="_blank">http://rocha.la/jQuery-slimScroll</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="quicksearch" class="page-header">QuickSearch</h1>
+	<p class="lead">A jQuery based plug-in for filtering large data sets with user input</p>
+
+	<p>Plugin is located in <strong>plugins/core/quicksearch/</strong> Plugin is included in every page do not remove ever.</p>
+	<pre><code>&lt;!-- Quick search plugin (fast search for many widgets) --&gt;
+&lt;script src=&quot;plugins/core/quicksearch/jquery.quicksearch.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Plugin is used for all custom searches in template</p>
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="https://github.com/riklomas/quicksearch" target="_blank">https://github.com/riklomas/quicksearch</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="velocity" class="page-header">Velocity</h1>
+	<p class="lead">Velocity is an animation engine with the same API as jQuery's $.animate(). It works with and without jQuery. It's incredibly fast, and it features color animation, transforms, loops, easings, SVG support, and scrolling. It is the best of jQuery and CSS transitions combined.</p>
+
+	<p>Plugin is located in <strong>plugins/core/velocity/</strong> Plugin is included in every page do not remove ever.</p>
+	<pre><code>&lt;!-- Increase jquery animation speed --&gt;
+&lt;script src=&quot;plugins/core/velocity/jquery.velocity.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Plugin is used to speed all animations in template </p>
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://julian.com/research/velocity/" target="_blank">http://julian.com/research/velocity/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="fastclick" class="page-header">Fast click</h1>
+	<p class="lead">FastClick is a simple, easy-to-use library for eliminating the 300ms delay between a physical tap and the firing of a click event on mobile browsers. The aim is to make your application feel less laggy and more responsive while avoiding any interference with your current logic.</p>
+
+	<p>Plugin is located in <strong>plugins/core/fastclick/</strong> Plugin is included in every page do not remove ever.</p>
+	<pre><code>&lt;!-- Remove click delay in touch --&gt;
+&lt;script src=&quot;plugins/core/fastclick/fastclick.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="https://github.com/ftlabs/fastclick" target="_blank">https://github.com/ftlabs/fastclick</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section" id="chart-plugins">
+	<h1 id="flot-charts" class="page-header">Flot charts</h1>
+	<p class="lead">Flot chart is the main chart plugin for template</p>
+
+	<p>
+		Flot is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features.
+	</p>
+	<p>Plugin is located in <strong>plugins/charts/flot/</strong> directory. Include plugin in page like this</p>
+	<pre><code>&lt;script src=&quot;plugins/charts/flot/jquery.flot.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;plugins/charts/flot/jquery.flot.pie.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;plugins/charts/flot/jquery.flot.resize.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;plugins/charts/flot/jquery.flot.time.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;plugins/charts/flot/jquery.flot.growraf.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;plugins/charts/flot/jquery.flot.categories.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;plugins/charts/flot/jquery.flot.stack.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;plugins/charts/flot/jquery.flot.orderBars.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;plugins/charts/flot/jquery.flot.tooltip.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;plugins/charts/flot/date.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin with custom options see <strong>charts-flot.js</strong> for example</p>
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="https://github.com/flot/flot/blob/master/API.md" target="_blank">https://github.com/flot/flot/blob/master/API.md</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section" id="chart-plugins">
+	<h1 id="chartjs-charts" class="page-header">Chartjs charts</h1>
+	<p class="lead">Chartjs is pure plotting library</p>
+
+	<p>
+		Simple, clean and engaging charts for designers and developers
+	</p>
+	<p>Plugin is located in <strong>plugins/charts/chartjs/</strong> directory. Include plugin in page like this</p>
+	<pre><code>&lt;script src=&quot;plugins/charts/chartjs/Chart.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin with custom options see <strong>chartjs-charts.js</strong> for example</p>
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://www.chartjs.org/docs/" target="_blank">http://www.chartjs.org/docs/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section" id="chart-plugins">
+	<h1 id="morris-charts" class="page-header">Morris charts</h1>
+	<p class="lead">Morris.js is the library that powers the graphs on http://howmanyleft.co.uk/. It's a very simple API for drawing line, bar, area and donut charts.</p>
+
+	<p>Plugin is located in <strong>plugins/charts/morris/</strong> directory. Include plugin in page like this</p>
+	<pre><code>&lt;script src=&quot;plugins/charts/morris/morris.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin with custom options see <strong>morris-charts.js</strong> for example</p>
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://morrisjs.github.io/morris.js/" target="_blank">http://morrisjs.github.io/morris.js/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="pie-charts" class="page-header">Easy pie charts</h1>
+	<p class="lead">Easy pie chart is a jQuery plugin that uses the canvas element to render simple pie charts for single values. These charts are highly customizable, very easy to implement, scale to the resolution of the display of the client to provide sharp charts even on retina displays, and use requestAnimationFrame for smooth animations on modern devices.</p>
+
+	<p>Plugin is located in <strong>plugins/charts/pie-charts/</strong> directory. Include plugin in page like this</p>
+	<pre><code>&lt;script src=&quot;plugins/charts/pie-chart/jquery.easy-pie-chart.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin with custom options see <strong>charts-other.js</strong> for example</p>
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://rendro.github.io/easy-pie-chart/" target="_blank">http://rendro.github.io/easy-pie-chart/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="sparklines" class="page-header">Sparklines</h1>
+	<p class="lead">This jQuery plugin generates sparklines (small inline charts) directly in the browser using data supplied either inline in the HTML, or via javascript.</p>
+
+	<p>Plugin is located in <strong>plugins/charts/sparklines/</strong> directory. Include plugin in page like this</p>
+	<pre><code>&lt;script src=&quot;plugins/charts/sparklines/jquery.sparkline.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin with custom options see <strong>charts-other.js</strong> for example</p>
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://omnipotent.net/jquery.sparkline/#s-docs" target="_blank">http://omnipotent.net/jquery.sparkline/#s-docs</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="gauge" class="page-header">Gauge</h1>
+	<p class="lead">100% native and cool looking animated JavaScript</p>
+
+	<p>Plugin is located in <strong>plugins/charts/gauge/</strong> directory. Include plugin in page like this</p>
+	<pre><code>&lt;script src=&quot;plugins/charts/gauge/gauge.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin with custom options see <strong>charts-other.js</strong> for example</p>
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://bernii.github.io/gauge.js/" target="_blank">http://bernii.github.io/gauge.js/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="progressbar-chart" class="page-header">Progressbar chart</h1>
+	<p class="lead">Beautiful and responsive progress bars with animated SVG paths.</p>
+
+	<p>Plugin is located in <strong>plugins/charts/progressbars/</strong> directory. Include plugin in page like this</p>
+	<pre><code>&lt;script src=&quot;plugins/charts/progressbars/progressbar.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin with custom options see <strong>dashboard.js</strong> for example</p>
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://kimmobrunfeldt.github.io/progressbar.js/" target="_blank">http://kimmobrunfeldt.github.io/progressbar.js/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section" id="form-plugins">
+	<h1 id="autosize" class="page-header">Autosize text area</h1>
+	<p class="lead">A plugin to automatically adjust textarea height.</p>
+
+	<p>Plugin is located in <strong>plugins/forms/autosize/</strong> directory. Include plugin in page like this</p>
+	<pre><code>&lt;script src=&quot;plugins/forms/autosize/jquery.autosize.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin like this</p>
+	<pre><code>//------------- Autosize Text area -------------//
+$(&#39;.elastic&#39;).autosize({append: &quot;\n&quot;});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://www.jacklmoore.com/autosize/" target="_blank">http://www.jacklmoore.com/autosize/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="bootstrap-filestyle" class="page-header">Bootstrap filestyle</h1>
+	<p class="lead">The Bootstrap Filestyle is a plugin for jquery-based component library could Twitter Bootstrap, used to style the file fields of the forms.
+This plugin has an interesting way to present a form for sending files so attractive, while being simple and efficient.</p>
+
+	<p>Plugin is located in <strong>plugins/forms/bootstrap-filestyle/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/forms/bootstrap-filestyle/bootstrap-filestyle.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin for desired input field</p>
+	<pre><code>//------------- File input styling -------------//
+$(&quot;:file&quot;).filestyle({
+    buttonText: &quot;Select file&quot;,
+    classButton: &quot;btn btn-primary&quot;,
+    classInput: &quot;form-control file-upload&quot;,
+    classIcon: &quot;fa-plus-sign&quot;
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://markusslima.github.io/bootstrap-filestyle/#Methods" target="_blank">http://markusslima.github.io/bootstrap-filestyle/#Methods</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="color-picker" class="page-header">Bootstrap color picker</h1>
+	<p class="lead">Colorpicker plugin for the Twitter Bootstrap toolkit.</p>
+
+	<p>Plugin is located in <strong>plugins/forms/color-picker/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/forms/color-picker/bootstrap-colorpicker.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin with multiple options</p>
+	<pre><code>//------------- Colorpicker -------------//
+$(&#39;#default-colorpicker&#39;).colorpicker();
+//as component
+$(&#39;#component-colorpicker&#39;).colorpicker({
+    color: &#39;#1fba5d&#39;
+});
+//horizontal
+$(&#39;#horizontal-colorpicker&#39;).colorpicker({
+    horizontal: true
+});
+//inline
+ $(&#39;#inline-colorpicker&#39;).colorpicker({
+    inline: true,
+    container: &#39;.inline-picker&#39;
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://mjolnic.github.io/bootstrap-colorpicker/" target="_blank">http://mjolnic.github.io/bootstrap-colorpicker/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="datepicker-picker" class="page-header">Datepicker picker</h1>
+	<p class="lead">Date picker component for Bootstrap </p>
+
+	<p>Plugin is located in <strong>plugins/forms/bootstrap-datepicker/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/forms/bootstrap-datepicker/bootstrap-datepicker.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin with multiple options</p>
+	<pre><code>//------------- Datepicker -------------//
+$(&quot;#basic-datepicker&quot;).datepicker();
+//multiple date
+$(&quot;#multiple-datepicker&quot;).datepicker({
+    multidate: true
+});
+//date range
+$(&quot;.input-daterange&quot;).datepicker();
+//inline
+$(&quot;#inline-datepicker&quot;).datepicker();</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="https://github.com/eternicode/bootstrap-datepicker/" target="_blank">https://github.com/eternicode/bootstrap-datepicker</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="time-picker" class="page-header">Time picker</h1>
+	<p class="lead">Time picker for bootstrap.</p>
+
+	<p>Plugin is located in <strong>plugins/forms/bootstrap-timepicker/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/forms/bootstrap-timepicker/bootstrap-timepicker.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin with multiple options</p>
+	<pre><code>//------------- Timepicker -------------//
+$(&#39;#default-timepicker&#39;).timepicker({
+    upArrowStyle: &#39;fa fa-angle-up&#39;,
+    downArrowStyle: &#39;fa fa-angle-down&#39;,
+});
+//custom time
+$(&#39;#customtime-timepicker&#39;).timepicker({
+    upArrowStyle: &#39;fa fa-angle-up&#39;,
+    downArrowStyle: &#39;fa fa-angle-down&#39;,
+    defaultTime: &#39;22:45 AM&#39;
+});
+//custom minute step
+$(&#39;#minute-step-timepicker&#39;).timepicker({
+    upArrowStyle: &#39;fa fa-angle-up&#39;,
+    downArrowStyle: &#39;fa fa-angle-down&#39;,
+    minuteStep: 30
+});
+//show seconds
+$(&#39;#show-seconds-timepicker&#39;).timepicker({
+    upArrowStyle: &#39;fa fa-angle-up&#39;,
+    downArrowStyle: &#39;fa fa-angle-down&#39;,
+    showSeconds: true
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="https://github.com/jdewit/bootstrap-timepicker" target="_blank">https://github.com/jdewit/bootstrap-timepicker</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="duallistbox" class="page-header">Dual list box</h1>
+	<p class="lead">Bootstrap Dual Listbox is a responsive dual listbox widget optimized for Twitter Bootstrap. Works on all modern browsers and on touch devices.</p>
+
+	<p>Plugin is located in <strong>/plugins/forms/dual-list-box/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;/plugins/forms/dual-list-box/jquery.bootstrap-duallistbox.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin with multiple options</p>
+	<pre><code>//------------- Dual list box -------------//
+$(&#39;.duallistbox&#39;).bootstrapDualListbox({
+    nonselectedlistlabel: &#39;Non-selected&#39;,
+    selectedlistlabel: &#39;Selected&#39;,
+    preserveselectiononmove: &#39;moved&#39;,
+    moveonselect: false,
+    iconMove: &#39;en-arrow-right8 s16&#39;,
+    iconMoveAll: &#39;fa-double-angle-right s16&#39;,
+    iconRemove: &#39;en-arrow-left8 s16&#39;,
+    iconRemoveAll: &#39;fa-double-angle-left s16&#39;
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="https://github.com/istvan-ujjmeszaros/bootstrap-duallistbox" target="_blank">https://github.com/istvan-ujjmeszaros/bootstrap-duallistbox</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="maskedinput" class="page-header">Masked input</h1>
+	<p class="lead">It allows a user to more easily enter fixed width input where you would like them to enter the data in a certain format (dates,phone numbers, etc).</p>
+
+	<p>Plugin is located in <strong>plugins/forms/maskedinput/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/forms/maskedinput/jquery.maskedinput.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin with multiple options</p>
+	<pre><code>//------------- Masked input fields -------------//
+$(&quot;#mask-phone&quot;).mask(&quot;(999) 999-9999&quot;, {completed:function(){alert(&quot;Callback action after complete&quot;);}});
+$(&quot;#mask-phoneExt&quot;).mask(&quot;(999) 999-9999? x99999&quot;);
+$(&quot;#mask-phoneInt&quot;).mask(&quot;+40 999 999 999&quot;);
+$(&quot;#mask-date&quot;).mask(&quot;99/99/9999&quot;);
+$(&quot;#mask-ssn&quot;).mask(&quot;999-99-9999&quot;);
+$(&quot;#mask-productKey&quot;).mask(&quot;a*-999-a999&quot;, { placeholder: &quot;*&quot; });
+$(&quot;#mask-eyeScript&quot;).mask(&quot;~9.99 ~9.99 999&quot;);
+$(&quot;#mask-percent&quot;).mask(&quot;99%&quot;);</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://digitalbush.com/projects/masked-input-plugin/" target="_blank">http://digitalbush.com/projects/masked-input-plugin/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="maxlength" class="page-header">Maxlength</h1>
+	<p class="lead">This plugin integrates by default with Twitter bootstrap using badges to display the maximum lenght of the field where the user is inserting text. Uses the HTML5 attribute "maxlength" to work.</p>
+
+	<p>Plugin is located in <strong>plugins/forms/maxlength/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/forms/maxlength/bootstrap-maxlength.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin with multiple options</p>
+	<pre><code>//------------- Max Lenght input filed -------------//
+$(&#39;.limitInput&#39;).maxlength({
+    alwaysShow: true,
+    threshold: 10,
+    warningClass: &quot;label label-success&quot;,
+    limitReachedClass: &quot;label label-danger&quot;,
+    validate: true
+});
+//------------- Max Lenght Textarea -------------//
+$(&#39;.limitTextarea&#39;).maxlength({
+    alwaysShow: true,
+    threshold: 10,
+    warningClass: &quot;label label-success&quot;,
+    limitReachedClass: &quot;label label-danger&quot;,
+    separator: &#39; of &#39;,
+    preText: &#39;You have &#39;,
+    postText: &#39; chars remaining.&#39;,
+    validate: true
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="https://github.com/mimo84/bootstrap-maxlength" target="_blank">https://github.com/mimo84/bootstrap-maxlength</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="select2" class="page-header">Select2</h1>
+	<p class="lead">Select2 is a jQuery based replacement for select boxes. It supports searching, remote data sets, and infinite scrolling of results.</p>
+
+	<p>Plugin is located in <strong>/plugins/forms/select2/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;/plugins/forms/select2/select2.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin with multiple options</p>
+	<pre><code>//------------- Select 2 -------------//
+$(&#39;.select2&#39;).select2({placeholder: &#39;Select state&#39;});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://ivaynberg.github.io/select2/" target="_blank">http://ivaynberg.github.io/select2/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="tags" class="page-header">Tags</h1>
+	<p class="lead">jQuery plugin providing a Twitter Bootstrap user interface for managing tags</p>
+
+	<p>Plugin is located in <strong>plugins/forms/bootstrap-tagsinput/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/forms/bootstrap-tagsinput/bootstrap-tagsinput.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin with multiple options</p>
+	<pre><code>//------------- Tags -------------//
+//from json
+var citynames = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.obj.whitespace(&#39;name&#39;),
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  prefetch: {
+    url: &#39;ajax/citynames.json&#39;,
+    filter: function(list) {
+      return $.map(list, function(cityname) {
+        return { name: cityname }; });
+    }
+  }
+});
+citynames.initialize();
+
+$(&#39;#json-tags&#39;).tagsinput({
+    typeaheadjs: {
+        name: &#39;citynames&#39;,
+        displayKey: &#39;name&#39;,
+        valueKey: &#39;name&#39;,
+        source: citynames.ttAdapter()
+    }
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://timschlechter.github.io/bootstrap-tagsinput/examples/" target="_blank">http://timschlechter.github.io/bootstrap-tagsinput/examples/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="summernote" class="page-header">Summernote</h1>
+	<p class="lead">Super simple WYSIWYG Editor using Bootstrap</p>
+
+	<p>Plugin is located in <strong>/plugins/forms/summernote/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;/plugins/forms/summernote/summernote.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin</p>
+	<pre><code>//------------- WYSIWYG summernote -------------//
+$(&#39;#summernote&#39;).summernote({
+    height: 200
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="https://github.com/summernote/summernote" target="_blank">https://github.com/summernote/summernote</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="validation" class="page-header">Form validation</h1>
+	<p class="lead">his jQuery plugin makes simple clientside form validation trivial, while offering lots of option for customization</p>
+
+	<p>Plugin is located in <strong>/plugins/forms/validation/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;/plugins/forms/validation/jquery.validate.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/plugins/forms/validation/additional-methods.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin with multiple options</p>
+	<pre><code>//------------- Form validation -------------//
+$(&quot;#validate&quot;).validate({
+    ignore: null,
+    ignore: &#39;input[type=&quot;hidden&quot;]&#39;,
+    errorPlacement: function( error, element ) {
+        var place = element.closest(&#39;.input-group&#39;);
+        if (!place.get(0)) {
+            place = element;
+        }
+        if (place.get(0).type === &#39;checkbox&#39;) {
+            place = element.parent();
+        }
+        if (error.text() !== &#39;&#39;) {
+            place.after(error);
+        }
+    },
+    errorClass: &#39;help-block&#39;,
+    rules: {
+        email: {
+            required: true,
+            email: true
+        },
+        select2: &quot;required&quot;,
+        password: {
+            required: true,
+            minlength: 5
+        },
+        textarea: {
+            required: true,
+            minlength: 10
+        },
+        maxLenght: {
+            required: true,
+              maxlength: 10
+        },
+        rangelenght: {
+          required: true,
+          rangelength: [10, 20]
+        },
+        url: {
+          required: true,
+          url: true
+        },
+        range: {
+          required: true,
+          range: [5, 10]
+        },
+        minval: {
+          required: true,
+          min: 13
+        },
+        maxval: {
+          required: true,
+          max: 13
+        },
+        date: {
+          required: true,
+          date: true
+        },
+        number: {
+          required: true,
+          number: true
+        },
+        digits: {
+          required: true,
+          digits: true
+        },
+        ccard: {
+          required: true,
+          creditcard: true
+        },
+        agree: &quot;required&quot;
+    },
+    messages: {
+        password: {
+            required: &quot;Please provide a password&quot;,
+            minlength: &quot;Your password must be at least 5 characters long&quot;
+        },
+        agree: &quot;Please accept our policy&quot;,
+        textarea: &quot;Write some info for you&quot;,
+        select2: &quot;Please select something&quot;
+    },
+    highlight: function( label ) {
+        $(label).closest(&#39;.form-group&#39;).removeClass(&#39;has-success&#39;).addClass(&#39;has-error&#39;);
+    },
+    success: function( label ) {
+        $(label).closest(&#39;.form-group&#39;).removeClass(&#39;has-error&#39;);
+        label.remove();
+    }
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://bassistance.de/jquery-plugins/jquery-plugin-validation/" target="_blank">http://bassistance.de/jquery-plugins/jquery-plugin-validation/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="form-wizard" class="page-header">Form Wizard</h1>
+	<p class="lead">This twitter bootstrap plugin builds a wizard out of a formatter tabbable structure. It allows to build a wizard functionality using buttons to go through the different wizard steps and using events allows to hook into each step individually.</p>
+
+	<p>Plugin is located in <strong>plugins/forms/bootstrap-wizard/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/forms/bootstrap-wizard/jquery.bootstrap.wizard.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin with multiple options</p>
+	<pre><code>//------------- Form wizard -------------//
+
+//add validation to wizard
+var $validator = $(&quot;#wizard form&quot;).validate({
+    errorPlacement: function( error, element ) {
+        var place = element.closest(&#39;.input-group&#39;);
+        if (!place.get(0)) {
+            place = element;
+        }
+        if (place.get(0).type === &#39;checkbox&#39;) {
+            place = element.parent();
+        }
+        if (error.text() !== &#39;&#39;) {
+            place.after(error);
+        }
+    },
+    errorClass: &#39;help-block&#39;,
+    rules: {
+        firstname: {
+             required: true
+         },
+         email: {
+             required: true,
+             email: true
+         },
+         username: {
+             required: true
+         },
+         password: {
+             required: true,
+             minlength: 5
+         },
+         password_2: {
+             required: true,
+            minlength: 5,
+            equalTo: &quot;#password&quot;
+         }
+     },
+     messages: {
+         firstname: {
+             required: &quot;I need to know your first name Sir&quot;
+         },
+         email: {
+             required: &quot;You email is required Sir&quot;
+         }
+     },
+     highlight: function( label ) {
+        $(label).closest(&#39;.form-group&#39;).removeClass(&#39;has-success&#39;).addClass(&#39;has-error&#39;);
+    },
+    success: function( label ) {
+        $(label).closest(&#39;.form-group&#39;).removeClass(&#39;has-error&#39;);
+        label.remove();
+    }
+});
+
+//init first wizard
+$(&#39;#wizard&#39;).bootstrapWizard({
+    tabClass: &#39;bwizard-steps&#39;,
+    nextSelector: &#39;ul.pager li.next&#39;,
+    previousSelector: &#39;ul.pager li.previous&#39;,
+    firstSelector: null,
+    lastSelector: null,
+    onNext: function( tab, navigation, index, newindex ) {
+        var validated = $(&#39;#wizard form&#39;).valid();
+        if( !validated ) {
+            $validator.focusInvalid();
+            return false;
+        }
+    },
+    onTabClick: function( tab, navigation, index, newindex ) {
+        if ( newindex == index + 1 ) {
+            return this.onNext( tab, navigation, index, newindex);
+        } else if ( newindex &gt; index + 1 ) {
+            return false;
+        } else {
+            return true;
+        }
+    },
+    onTabShow: function( tab, navigation, index ) {
+        tab.prevAll().addClass(&#39;completed&#39;);
+        tab.nextAll().removeClass(&#39;completed&#39;);
+        var $total = navigation.find(&#39;li&#39;).length;
+        var $current = index+1;
+        // If it&#39;s the last tab then hide the last button and show the finish instead
+        if($current &gt;= $total) {
+            $(&#39;#wizard&#39;).find(&#39;.pager .next&#39;).hide();
+            $(&#39;#wizard&#39;).find(&#39;.pager .finish&#39;).show();
+            $(&#39;#wizard&#39;).find(&#39;.pager .finish&#39;).removeClass(&#39;disabled&#39;);
+        } else {
+            $(&#39;#wizard&#39;).find(&#39;.pager .next&#39;).show();
+            $(&#39;#wizard&#39;).find(&#39;.pager .finish&#39;).hide();
+        }
+    }
+});
+
+//wizard is finish
+$(&#39;#wizard .finish&#39;).click(function() {
+    //show message
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="https://github.com/VinceG/twitter-bootstrap-wizard" target="_blank">https://github.com/VinceG/twitter-bootstrap-wizard</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="spinner" class="page-header">Spinner</h1>
+	<p class="lead">A mobile and touch friendly input spinner component for Bootstrap 3. It supports the mousewheel and the up/down keys.</p>
+
+	<p>Plugin is located in <strong>/plugins/forms/spinner/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;/plugins/forms/spinner/jquery.bootstrap-touchspin.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin</p>
+	<pre><code>//------------- Spinners -------------//
+$(&quot;#basic-spinner&quot;).TouchSpin({
+    min: 0,
+    max: 100
+});
+//with postfix
+$(&quot;#postfix-spinner&quot;).TouchSpin({
+    min: 0,
+    max: 100,
+    postfix: &#39;%&#39;
+});
+//with prefix
+$(&quot;#prefix-spinner&quot;).TouchSpin({
+    min: 0,
+    max: 100,
+    prefix: &#39;
+    &lt;/div&gt;
+    &lt;div class=&quot;col-md-3&quot;&gt;
+      &lt;div class=&quot;bs-docs-sidebar hidden-print&quot; role=&quot;complementary&quot;&gt;
+        &lt;ul class=&quot;nav bs-docs-sidenav&quot;&gt;
+
+
+          &lt;!--  --&gt;</code></pre>
+<li>
+  <a href="#plugins">Plugins</a>
+</li>
+<li>
+  <a href="#dynamic">Dynamic plugin</a>
+</li>
+<li>
+  <a href="#core-plugins">Core plugins</a>
+  <ul class="nav">
+    <li><a href="#bootstrap">Bootstrap</a></li>
+    <li><a href="#jrespond">jRespond</a></li>
+    <li><a href="#pace">Pace loader</a></li>
+    <li><a href="#slimscroll">Slimscroll</a></li>
+    <li><a href="#quicksearch">Quicksearch</a></li>
+    <li><a href="#velocity">Velocity</a></li>
+    <li><a href="#fastclick">Fast Click</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#chart-plugins">Chart plugins</a>
+  <ul class="nav">
+    <li><a href="#flot-charts">Flot charts</a></li>
+    <li><a href="#chartjs-charts">Chartjs charts</a></li>
+    <li><a href="#morris-charts">Morris charts</a></li>
+    <li><a href="#pie-charts">Easy pie charts</a></li>
+    <li><a href="#sparklines">Sparklines</a></li>
+    <li><a href="#gauge">Gauge</a></li>
+    <li><a href="#progressbar-chart">Progressbar chart</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#form-plugins">Form plugins</a>
+  <ul class="nav">
+    <li><a href="#autosize">Autosize textarea</a></li>
+    <li><a href="#bootstrap-filestyle">Filestyle</a></li>
+    <li><a href="#check-all">Check All</a></li>
+    <li><a href="#color-picker">Color picker</a></li>
+    <li><a href="#datepicker-picker">Datepicker picker</a></li>
+    <li><a href="#datetime-picker">Datetime picker</a></li>
+    <li><a href="#duallistbox">Dual list box</a></li>
+    <li><a href="#maskedinput">Masked input</a></li>
+    <li><a href="#maxlength">Maxlength</a></li>
+    <li><a href="#select2">Select2</a></li>
+    <li><a href="#tags">Tags</a></li>
+    <li><a href="#summernote">Summernote</a></li>
+    <li><a href="#validation">Form Validation</a></li>
+    <li><a href="#form-wizard">Form wizard</a></li>
+    <li><a href="#spinner">Spinner</a></li>
+    <li><a href="#fancyselect">Fancyselect</a></li>
+    <li><a href="#dropzone">Dropzone</a></li>
+    <li><a href="#codemirror">Codemirror</a></li>
+    <li><a href="#markdown">Makrdown editor</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#misc-plugins">Misc plugins</a>
+  <ul class="nav">
+    <li><a href="#countto">Count To</a></li>
+    <li><a href="#gmaps">Google maps</a></li>
+    <li><a href="#vectormaps">Vector maps</a></li>
+  </ul>
+</li>
+<li><a href="#datatables">Datatables</a></li>
+<li>
+  <a href="#ui-plugins">UI plugins</a>
+  <ul class="nav">
+    <li><a href="#botbox">BootBox</a></li>
+    <li><a href="#fullcalendar">Fullcalendar</a></li>
+    <li><a href="#gritter">Gritter</a></li>
+    <li><a href="#circfull">Circliful</a></li>
+    <li><a href="#bsslider">Slider</a></li>
+    <li><a href="#tabdrop">Tab drop</a></li>
+    <li><a href="#waypoint">Waypoint</a></li>
+  </ul>
+</li>
+
+
+<pre><code>        &lt;/ul&gt;
+        &lt;a class=&quot;back-to-top&quot; href=&quot;#top&quot;&gt;
+          Back to top
+        &lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;footer class=&quot;bs-docs-footer&quot; role=&quot;contentinfo&quot;&gt;
+  &lt;div class=&quot;container&quot;&gt;
+
+  &lt;/div&gt;
+&lt;/footer&gt;
+
+&lt;!-- jQuery (necessary for Bootstrap&#39;s JavaScript plugins) --&gt;
+&lt;script src=&quot;assets/js/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- Include all compiled plugins (below), or include individual files as needed --&gt;
+&lt;script src=&quot;assets/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/plugins/highlight/highlight.pack.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;
+&lt;script src=&quot;assets/js/app.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p>  </body>
+</html>
+    });
+    //decimal spinner
+    $(&quot;#decimal-spinner&quot;).TouchSpin({
+        min: 1,
+        max: 10,
+        step: 0.1,
+        decimals: 2
+    });
+    //vertical buttons
+    $(&quot;#vertical-spinner&quot;).TouchSpin({
+        verticalbuttons: true,
+        verticalupclass: &#39;fa fa-angle-up s12&#39;,
+        verticaldownclass: &#39;fa fa-angle-down s12&#39;
+    });</p>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://www.virtuosoft.eu/code/bootstrap-touchspin/" target="_blank">http://www.virtuosoft.eu/code/bootstrap-touchspin/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="fancyselect" class="page-header">Fancyselect</h1>
+	<p class="lead">A better select for discerning web developers.</p>
+
+	<p>Plugin is located in <strong>/plugins/forms/fancyselect/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;/plugins/forms/fancyselect/fancySelect.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin</p>
+	<pre><code>//------------- Fancy select -------------//
+$(&#39;.fancy-select&#39;).fancySelect();
+//custom templating
+$(&#39;.fancy-select1&#39;).fancySelect({
+    optionTemplate: function(optionEl) {
+        return optionEl.text() + &#39;&lt;i class=&quot;pull-left &#39; + optionEl.data(&#39;icon&#39;) + &#39;&quot;&gt;&lt;/i&gt;&#39;;
+    }
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="https://github.com/octopuscreative/fancyselect" target="_blank">https://github.com/octopuscreative/fancyselect</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="dropzone" class="page-header">Dropzone</h1>
+	<p class="lead">DropzoneJS is an open source library that provides drag'n'drop file uploads with image previews.</p>
+
+	<p>Plugin is located in <strong>/plugins/forms/dropzone/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;/plugins/forms/dropzone/dropzone.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin</p>
+	<pre><code>&lt;form action=&quot;/file-upload&quot;class=&quot;dropzone&quot; id=&quot;my-awesome-dropzone&quot;&gt;&lt;/form&gt;</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://www.dropzonejs.com/" target="_blank">http://www.dropzonejs.com/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="codemirror" class="page-header">Codemirror</h1>
+	<p class="lead">CodeMirror is a versatile text editor implemented in JavaScript for the browser. It is specialized for editing code, and comes with a number of language modes and addons that implement more advanced editing functionality.</p>
+
+	<p>Plugin is located in <strong>/plugins/forms/codemirror/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;/plugins/forms/codemirror/codemirror.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>And init plugin</p>
+	<pre><code>//------------- Code mirror  -------------//
+
+//mixed mode
+var mixedMode = {
+    name: &quot;htmlmixed&quot;,
+    scriptTypes: [{matches: /\/x-handlebars-template|\/x-mustache/i,
+       mode: null},
+      {matches: /(text|application)\/(x-)?vb(a|script)/i,
+       mode: &quot;vbscript&quot;}]
+};
+var editor = CodeMirror.fromTextArea(document.getElementById(&quot;code&quot;), {
+    lineNumbers: true,
+    styleActiveLine: true,
+    matchBrackets: true,
+    theme: &#39;monokai&#39;,
+    mode: mixedMode
+});
+
+//javascript example
+var editor1 = CodeMirror.fromTextArea(document.getElementById(&quot;code1&quot;), {
+    lineNumbers: true,
+    matchBrackets: true,
+    theme: &#39;monokai&#39;,
+    mode:  &quot;javascript&quot;
+});
+
+editor1.setSize(&#39;auto&#39;, &#39;100%&#39;);
+
+//css example
+var editor2 = CodeMirror.fromTextArea(document.getElementById(&quot;code2&quot;), {
+    lineNumbers: true,
+    matchBrackets: true,
+    theme: &#39;monokai&#39;,
+    mode:  &quot;css&quot;
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://codemirror.net/" target="_blank">http://codemirror.net/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="markdown" class="page-header">Markdown editor</h1>
+	<p class="lead">Bootstrap plugin for markdown editing</p>
+
+	<p>Plugin is located in <strong>/plugins/forms/bootstrap-markdown/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;/plugins/forms/bootstrap-markdown/bootstrap-markdown.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="https://github.com/toopay/bootstrap-markdown/" target="_blank">https://github.com/toopay/bootstrap-markdown</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="countto" class="page-header">Count to</h1>
+	<p class="lead">A jQuery plugin that will count up (or down) to a target number at a specified speed.</p>
+
+	<p>Plugin is located in <strong>plugins/misc/countTo/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/misc/countTo/jquery.countTo.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin like this</p>
+	<pre><code> $(&#39;.timer&#39;).countTo({
+    from: 50,
+    to: 2500,
+    speed: 1000,
+    refreshInterval: 50,
+    formatter: function (value, options) {
+        return value.toFixed(options.decimals);
+    },
+    onUpdate: function (value) {
+        console.debug(this);
+    },
+    onComplete: function (value) {
+        console.debug(this);
+    }
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="https://github.com/mhuggins/jquery-countTo/" target="_blank">https://github.com/mhuggins/jquery-countTo</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="gmaps" class="page-header">Google maps</h1>
+	<p class="lead">gmaps.js allows you to use the potential of Google Maps in a simple way. No more extensive documentation or large amount of code.</p>
+
+	<p>Plugin is located in <strong>plugins/misc/gmaps/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;http://maps.google.com/maps/api/js?sensor=true&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;plugins/misc/gmaps/gmaps.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin like this</p>
+	<pre><code>//------------- Google maps -------------//
+//basic map
+var bmap = new GMaps({
+    el: &#39;#gmap&#39;,
+    lat: -12.043333,
+    lng: -77.028333,
+    zoomControl : true,
+    zoomControlOpt: {
+        style : &#39;SMALL&#39;,
+        position: &#39;TOP_LEFT&#39;
+    },
+    panControl : false,
+    streetViewControl : false,
+    mapTypeControl: false,
+    overviewMapControl: false
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://hpneo.github.io/gmaps/" target="_blank">http://hpneo.github.io/gmaps/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="vectormaps" class="page-header">Vector maps</h1>
+	<p class="lead">Show vector maps</p>
+
+	<p>Plugin is located in <strong>assets/plugins/misc/vectormaps/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;assets/plugins/misc/vectormaps/jquery-jvectormap-1.2.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/plugins/misc/vectormaps/maps/jquery-jvectormap-world-mill-en.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin like this</p>
+	<pre><code>//------------- Vector maps -------------//
+$(&#39;#world-map-markers&#39;).vectorMap({
+    map: &#39;world_mill_en&#39;,
+    scaleColors: [colours.teal, colours.blue],
+    normalizeFunction: &#39;polynomial&#39;,
+    hoverOpacity: 0.7,
+    hoverColor: false,
+    focusOn:{
+        x: 0.5,
+        y: 0.5,
+        scale: 2.0
+    },
+    zoomMin:0.85,
+    markerStyle: {
+      initial: {
+        fill: colours.red,
+        stroke: colours.red
+      }
+    },
+    backgroundColor: colours.white,
+    regionStyle:{
+        initial: {
+            fill: colours.teal,
+            &quot;fill-opacity&quot;: 1,
+            stroke: colours.teal,
+            &quot;stroke-width&quot;: 0,
+            &quot;stroke-opacity&quot;: 0
+        },
+        hover: {
+            &quot;fill-opacity&quot;: 0.8
+        },
+        selected: {
+            fill: &#39;yellow&#39;
+        }
+    },
+    markers: [
+        {latLng: [41.90, 12.45], name: &#39;Vatican City&#39;},
+        {latLng: [43.73, 7.41], name: &#39;Monaco&#39;},
+        {latLng: [-0.52, 166.93], name: &#39;Nauru&#39;},
+        {latLng: [-8.51, 179.21], name: &#39;Tuvalu&#39;},
+        {latLng: [43.93, 12.46], name: &#39;San Marino&#39;},
+        {latLng: [47.14, 9.52], name: &#39;Liechtenstein&#39;},
+        {latLng: [7.11, 171.06], name: &#39;Marshall Islands&#39;},
+        {latLng: [17.3, -62.73], name: &#39;Saint Kitts and Nevis&#39;},
+        {latLng: [3.2, 73.22], name: &#39;Maldives&#39;},
+        {latLng: [35.88, 14.5], name: &#39;Malta&#39;},
+        {latLng: [12.05, -61.75], name: &#39;Grenada&#39;},
+        {latLng: [13.16, -61.23], name: &#39;Saint Vincent and the Grenadines&#39;},
+        {latLng: [13.16, -59.55], name: &#39;Barbados&#39;},
+        {latLng: [17.11, -61.85], name: &#39;Antigua and Barbuda&#39;},
+        {latLng: [-4.61, 55.45], name: &#39;Seychelles&#39;},
+        {latLng: [7.35, 134.46], name: &#39;Palau&#39;},
+        {latLng: [42.5, 1.51], name: &#39;Andorra&#39;},
+        {latLng: [14.01, -60.98], name: &#39;Saint Lucia&#39;},
+        {latLng: [6.91, 158.18], name: &#39;Federated States of Micronesia&#39;},
+        {latLng: [1.3, 103.8], name: &#39;Singapore&#39;},
+        {latLng: [1.46, 173.03], name: &#39;Kiribati&#39;},
+        {latLng: [-21.13, -175.2], name: &#39;Tonga&#39;},
+        {latLng: [15.3, -61.38], name: &#39;Dominica&#39;},
+        {latLng: [-20.2, 57.5], name: &#39;Mauritius&#39;},
+        {latLng: [26.02, 50.55], name: &#39;Bahrain&#39;},
+        {latLng: [0.33, 6.73], name: &#39;São Tomé and Príncipe&#39;}
+    ]
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://jvectormap.com/documentation/" target="_blank">http://jvectormap.com/documentation/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="datatables" class="page-header">Datatables</h1>
+	<p class="lead">DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, and will add advanced interaction controls to any HTML table.</p>
+
+	<p>Plugin is located in <strong>plugins/tables/datatables/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/tables/datatables/jquery.dataTables.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;plugins/tables/datatables/jquery.dataTablesBS3.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>If you want to use tabletools for datatables include this two files too</p>
+
+	<pre><code>&lt;script src=&quot;plugins/tables/datatables/tabletools/ZeroClipboard.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;plugins/tables/datatables/tabletools/TableTools.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin like this</p>
+	<pre><code>//------------- Data tables -------------//
+//basic datatables
+$(&#39;#basic-datatables&#39;).dataTable({
+    &quot;oLanguage&quot;: {
+        &quot;sSearch&quot;: &quot;&quot;,
+        &quot;sLengthMenu&quot;: &quot;&lt;span&gt;_MENU_&lt;/span&gt;&quot;
+    },
+    &quot;sDom&quot;: &quot;&lt;&#39;row&#39;&lt;&#39;col-md-6 col-xs-12 &#39;l&gt;&lt;&#39;col-md-6 col-xs-12&#39;f&gt;r&gt;t&lt;&#39;row&#39;&lt;&#39;col-md-4 col-xs-12&#39;i&gt;&lt;&#39;col-md-8 col-xs-12&#39;p&gt;&gt;&quot;
+});
+
+//vertical scroll
+$(&#39;#vertical-scroll-datatables&#39;).dataTable( {
+    &quot;scrollY&quot;:        &quot;200px&quot;,
+    &quot;scrollCollapse&quot;: true,
+    &quot;paging&quot;:         false
+});
+
+//responsive datatables
+$(&#39;#responsive-datatables&#39;).dataTable({
+    &quot;oLanguage&quot;: {
+        &quot;sSearch&quot;: &quot;&quot;,
+        &quot;sLengthMenu&quot;: &quot;&lt;span&gt;_MENU_&lt;/span&gt;&quot;
+    },
+    &quot;sDom&quot;: &quot;&lt;&#39;row&#39;&lt;&#39;col-md-6 col-xs-12 &#39;l&gt;&lt;&#39;col-md-6 col-xs-12&#39;f&gt;r&gt;t&lt;&#39;row&#39;&lt;&#39;col-md-4 col-xs-12&#39;i&gt;&lt;&#39;col-md-8 col-xs-12&#39;p&gt;&gt;&quot;
+});
+
+//with tabletools
+$(&#39;#tabletools&#39;).DataTable( {
+    &quot;oLanguage&quot;: {
+        &quot;sSearch&quot;: &quot;&quot;,
+        &quot;sLengthMenu&quot;: &quot;&lt;span&gt;_MENU_&lt;/span&gt;&quot;
+    },
+    &quot;sDom&quot;: &quot;T&lt;&#39;row&#39;&lt;&#39;col-md-6 col-xs-12 &#39;l&gt;&lt;&#39;col-md-6 col-xs-12&#39;f&gt;r&gt;t&lt;&#39;row&#39;&lt;&#39;col-md-4 col-xs-12&#39;i&gt;&lt;&#39;col-md-8 col-xs-12&#39;p&gt;&gt;&quot;,
+    tableTools: {
+        &quot;sSwfPath&quot;: &quot;http://cdn.datatables.net/tabletools/2.2.2/swf/copy_csv_xls_pdf.swf&quot;,
+        &quot;aButtons&quot;: [ 
+          &quot;copy&quot;, 
+          &quot;csv&quot;, 
+          &quot;xls&quot;,
+          &quot;print&quot;,
+          &quot;select_all&quot;, 
+          &quot;select_none&quot; 
+      ]
+    }
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="https://datatables.net/" target="_blank">https://datatables.net/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="ui-plugins" class="page-header">Ui plugins</h1>
+	<h1 id="bootbox" class="page-header">Bootbox.js</h1>
+	<p class="lead">Bootbox.js is a small JavaScript library which allows you to create programmatic dialog boxes using Twitter’s Bootstrap modals, without having to worry about creating, managing or removing any of the required DOM elements or JS event handlers</p>
+
+	<p>Plugin is located in <strong>plugins/ui/bootbox/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/ui/bootbox/bootbox.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin like this</p>
+	<pre><code>//------------- Modals -------------//
+//Alert modal
+$(&#39;#alert-modal&#39;).click(function() {
+    bootbox.dialog({
+        message: &quot;This is custom alert&quot;,
+        title: &quot;Alert!!!&quot;,
+        buttons: {
+            success: {
+              label: &quot;Ok i got it&quot;,
+              className: &quot;btn-primary btn-alt&quot;,
+              callback: function() {
+                  //callback result
+              }
+            }
+        }
+    });
+});
+
+//Confirm modal
+$(&#39;#confirm-modal&#39;).click(function() {
+    bootbox.confirm({
+        message: &quot;Confirm results:&quot;,
+        title: &quot;Are you sure ?&quot;,
+        callback: function(result) {
+              //callback result
+              console.log(result);
+        }
+    });
+});
+
+//Prompt modal
+$(&#39;#prompt-modal&#39;).click(function() {
+    bootbox.prompt({
+        title: &quot;What is your name ?&quot;,
+        callback: function(result) {
+              //callback result
+              console.log(result);
+        }
+    });
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://bootboxjs.com/" target="_blank">http://bootboxjs.com/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="fullcalendar" class="page-header">Fullcalendar</h1>
+	<p class="lead">FullCalendar is a jQuery plugin that provides a full-sized, drag &amp; drop calendar like the one below. It uses AJAX to fetch events on-the-fly for each month and is easily configured to use your own feed format (an extension is provided for Google Calendar). It is visually customizable and exposes hooks for user-triggered events (like clicking or dragging an event)</p>
+
+	<p>Plugin is located in <strong>plugins/ui/calendar/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/ui/calendar/fullcalendar.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin like this</p>
+	<pre><code>/* initialize the external events
+    -----------------------------------------------------------------*/
+
+$(&#39;#external-events div.external-event&#39;).each(function() {
+
+    // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+    // it doesn&#39;t need to have a start or end
+    var eventObject = {
+        title: $.trim($(this).text()) // use the element&#39;s text as the event title
+    };
+
+    // store the Event Object in the DOM element so we can get to it later
+    $(this).data(&#39;eventObject&#39;, eventObject);
+
+    // make the event draggable using jQuery UI
+    $(this).draggable({
+        zIndex: 999,
+        revert: true,      // will cause the event to go back to its
+        revertDuration: 0  //  original position after the drag
+    });
+
+});
+
+
+/* initialize the calendar
+-----------------------------------------------------------------*/
+var date = new Date();
+var d = date.getDate();
+var m = date.getMonth();
+var y = date.getFullYear();
+
+$(&#39;#calendar&#39;).fullCalendar({
+    header: {
+        left: &#39;prev,next today&#39;,
+        center: &#39;title&#39;,
+        right: &#39;month,agendaWeek,agendaDay&#39;
+    },
+    buttonText: {
+        prev: &#39;&lt;i class=&quot;en-arrow-left8 s16&quot;&gt;&lt;/i&gt;&#39;,
+        next: &#39;&lt;i class=&quot;en-arrow-right8 s16&quot;&gt;&lt;/i&gt;&#39;,
+        today:&#39;Today&#39;
+    },
+    editable: true,
+    droppable: true, // this allows things to be dropped onto the calendar !!!
+    drop: function(date) { // this function is called when something is dropped
+
+        // retrieve the dropped element&#39;s stored Event Object
+        var originalEventObject = $(this).data(&#39;eventObject&#39;);
+
+        // we need to copy it, so that multiple events don&#39;t have a reference to the same object
+        var copiedEventObject = $.extend({}, originalEventObject);
+
+        // assign it the date that was reported
+        copiedEventObject.start = date;
+
+        // render the event on the calendar
+        // the last `true` argument determines if the event &quot;sticks&quot; (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+        $(&#39;#calendar&#39;).fullCalendar(&#39;renderEvent&#39;, copiedEventObject, true);
+
+        // is the &quot;remove after drop&quot; checkbox checked?
+        if ($(&#39;#drop-remove&#39;).is(&#39;:checked&#39;)) {
+            // if so, remove the element from the &quot;Draggable Events&quot; list
+            $(this).remove();
+        }    
+    },
+    events: [
+        {
+            title: &#39;Meeting&#39;,
+            start: new Date(y, m, d, 12, 0),
+            end: new Date(y, m, d, 14, 0),
+            allDay: false,
+            description: &#39;Morning meeting with all staff.&#39;,
+        },
+        {
+            title: &#39;Important&#39;,
+            start: new Date(y, m, d, 12, 0),
+            end: new Date(y, m, d, 14, 0),
+            allDay: false,
+            description: &#39;Important backup on some servers.&#39;,
+        }
+    ]
+
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://arshaw.com/fullcalendar/" target="_blank">http://arshaw.com/fullcalendar/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="gritter" class="page-header">Gritter</h1>
+	<p class="lead">notification bubble/popup that appears in the top right of your desktop</p>
+
+	<p>Plugin is located in <strong>plugins/ui/notify/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/ui/notify/jquery.gritter.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin like this</p>
+	<pre><code>//info notice
+$(&#39;#regular-notice&#39;).click(function() {
+    $.gritter.add({
+        // (string | mandatory) the heading of the notification
+        title: &#39;Eric Hofman&#39;,
+        // (string | mandatory) the text inside the notification
+        text: &#39;User is just logged into system.&#39;,
+        // (string | optional) the image to display on the left
+        image: &#39;https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg&#39;,
+        // (string) specify font-face icon  class for close message
+        close_icon: &#39;en-cross&#39;,
+    });        
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://boedesign.com/blog/2009/07/11/growl-for-jquery-gritter/" target="_blank">http://boedesign.com/blog/2009/07/11/growl-for-jquery-gritter/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="circfull" class="page-header">Circliful</h1>
+	<p class="lead">Turn elements into circliful Circles.</p>
+
+	<p>Plugin is located in <strong>plugins/ui/progressbar/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/ui/progressbar/jquery.circliful.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin like this</p>
+	<pre><code>//------------- Circfull progress bar -------------//
+//red color
+$(&#39;.progress-circular-red&#39;).circliful({ backgroundColor: colours.gray,  foregroundColor: colours.red    });
+//blue color
+$(&#39;.progress-circular-blue&#39;).circliful({ backgroundColor: colours.gray,  foregroundColor: colours.blue    });
+//green color
+$(&#39;.progress-circular-green&#39;).circliful({ backgroundColor: colours.gray,  foregroundColor: colours.green });
+//yellow color
+$(&#39;.progress-circular-yellow&#39;).circliful({ backgroundColor: colours.gray,  foregroundColor: colours.yellow });</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://ladensia.com/circliful/index.html" target="_blank">http://ladensia.com/circliful/index.html</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="bsslider" class="page-header">Bootstrap slider</h1>
+	<p class="lead">Modern touch slider.</p>
+
+	<p>Plugin is located in <strong>plugins/ui/slider/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/ui/slider/bootstrap-slider.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin like this</p>
+	<pre><code>//------------- Sliders -------------//
+//Basic slider
+$(&#39;#basic-slider&#39;).slider({
+    min: 1,
+    max: 100,
+    step: 1,
+    value: 50,
+    formater: function(value) {
+        return value;
+    }
+});
+$(&quot;#basic-slider&quot;).on(&#39;slide&#39;, function(slideEvt) {
+    $(&quot;#slider1val&quot;).text(slideEvt.value);
+});
+
+//custom step slider
+$(&#39;#step-slider&#39;).slider({
+    min: 1,
+    max: 100,
+    step: 25,
+    value: 25,
+    formater: function(value) {
+        return value;
+    }
+});
+$(&quot;#step-slider&quot;).on(&#39;slide&#39;, function(slideEvt) {
+    $(&quot;#slider2val&quot;).text(slideEvt.value);
+});
+
+//range slider
+$(&#39;#range-slider&#39;).slider({
+    min: 1,
+    max: 1000,
+    step: 1,
+    value: [100,500],
+    formater: function(value) {
+        return value;
+    }
+});
+$(&quot;#range-slider&quot;).on(&#39;slide&#39;, function(slideEvt) {
+    $(&quot;#slider3val&quot;).text(slideEvt.value);
+});
+
+//vertical slider
+$(&#39;#vertical-slider&#39;).slider({
+    orientation: &#39;vertical&#39;,
+    reversed: true,
+    selection: &#39;after&#39;,
+    min: 1,
+    max: 10,
+    step: 1,
+    value: 5,
+    formater: function(value) {
+        return value;
+    }
+});
+$(&quot;#vertical-slider&quot;).on(&#39;slide&#39;, function(slideEvt) {
+    $(&quot;#slider4val&quot;).text(slideEvt.value);
+});</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://www.eyecon.ro/bootstrap-slider/" target="_blank">http://www.eyecon.ro/bootstrap-slider/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="tabdrop" class="page-header">Tab Drop</h1>
+	<p class="lead">Very usefull script when your tabs do not fit in a single row. This script takes the not fitting tabs and makes a new dropdown tab. In the dropdown there are all the tabs that do not fit.</p>
+
+	<p>Plugin is located in <strong>plugins/ui/tabdrop/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/ui/tabdrop/bootstrap-tabdrop.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Init plugin like this</p>
+	<pre><code>//------------- Tab drop -------------//
+function tabdrop() {
+    $(&#39;.tabdrop&#39;).tabdrop({
+        text: &#39;&lt;i class=&quot;fa-align-justify&quot;&gt;&lt;/i&gt;&#39;
+    }).on(&quot;click&quot;, function(){
+        $(this).tabdrop(&#39;layout&#39;);
+    });
+}
+$(window).on(&quot;load&quot;, function(){
+   tabdrop();
+});
+$(window).resize(tabdrop);</code></pre>
+
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://www.eyecon.ro/bootstrap-tabdrop/" target="_blank">http://www.eyecon.ro/bootstrap-tabdrop/</a></p>
+
+	</div>
+	
+</div>
+
+<div class="bs-docs-section">
+	<h1 id="waypoint" class="page-header">Waypoint plugin</h1>
+	<p class="lead">Waypoints is a jQuery plugin that makes it easy to execute a function whenever you scroll to an element.</p>
+
+	<p>Plugin is located in <strong>plugins/ui/waypoint/</strong></p>
+	<p>Include plugin via js like this:</p>
+
+	<pre><code>&lt;script src=&quot;plugins/ui/waypoint/waypoint.js&quot;&gt;&lt;/script&gt;</code></pre>
+
+
+	<p>Please see detailed documentation for how to setup plugin</p>
+
+	<div class="bs-callout bs-callout-danger">
+	    <h4>Official documentation</h4>
+	    <p>Here is the official documentation for plugin - <a href="http://imakewebthings.com/jquery-waypoints/#docs" target="_blank">http://imakewebthings.com/jquery-waypoints/#docs</a></p>
+
+	</div>
+	
+</div>
+        </div>
+        <div class="col-md-3">
+          <div class="bs-docs-sidebar hidden-print" role="complementary">
+            <ul class="nav bs-docs-sidenav">
+              
+              
+              <!--  -->
+               
+                
+<li>
+  <a href="#plugins">Plugins</a>
+</li>
+<li>
+  <a href="#dynamic">Dynamic plugin</a>
+</li>
+<li>
+  <a href="#core-plugins">Core plugins</a>
+  <ul class="nav">
+    <li><a href="#bootstrap">Bootstrap</a></li>
+    <li><a href="#jrespond">jRespond</a></li>
+    <li><a href="#pace">Pace loader</a></li>
+    <li><a href="#slimscroll">Slimscroll</a></li>
+    <li><a href="#quicksearch">Quicksearch</a></li>
+    <li><a href="#velocity">Velocity</a></li>
+    <li><a href="#fastclick">Fast Click</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#chart-plugins">Chart plugins</a>
+  <ul class="nav">
+    <li><a href="#flot-charts">Flot charts</a></li>
+    <li><a href="#chartjs-charts">Chartjs charts</a></li>
+    <li><a href="#morris-charts">Morris charts</a></li>
+    <li><a href="#pie-charts">Easy pie charts</a></li>
+    <li><a href="#sparklines">Sparklines</a></li>
+    <li><a href="#gauge">Gauge</a></li>
+    <li><a href="#progressbar-chart">Progressbar chart</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#form-plugins">Form plugins</a>
+  <ul class="nav">
+    <li><a href="#autosize">Autosize textarea</a></li>
+    <li><a href="#bootstrap-filestyle">Filestyle</a></li>
+    <li><a href="#check-all">Check All</a></li>
+    <li><a href="#color-picker">Color picker</a></li>
+    <li><a href="#datepicker-picker">Datepicker picker</a></li>
+    <li><a href="#datetime-picker">Datetime picker</a></li>
+    <li><a href="#duallistbox">Dual list box</a></li>
+    <li><a href="#maskedinput">Masked input</a></li>
+    <li><a href="#maxlength">Maxlength</a></li>
+    <li><a href="#select2">Select2</a></li>
+    <li><a href="#tags">Tags</a></li>
+    <li><a href="#summernote">Summernote</a></li>
+    <li><a href="#validation">Form Validation</a></li>
+    <li><a href="#form-wizard">Form wizard</a></li>
+    <li><a href="#spinner">Spinner</a></li>
+    <li><a href="#fancyselect">Fancyselect</a></li>
+    <li><a href="#dropzone">Dropzone</a></li>
+    <li><a href="#codemirror">Codemirror</a></li>
+    <li><a href="#markdown">Makrdown editor</a></li>
+  </ul>
+</li>
+<li>
+  <a href="#misc-plugins">Misc plugins</a>
+  <ul class="nav">
+    <li><a href="#countto">Count To</a></li>
+    <li><a href="#gmaps">Google maps</a></li>
+    <li><a href="#vectormaps">Vector maps</a></li>
+  </ul>
+</li>
+<li><a href="#datatables">Datatables</a></li>
+<li>
+  <a href="#ui-plugins">UI plugins</a>
+  <ul class="nav">
+    <li><a href="#botbox">BootBox</a></li>
+    <li><a href="#fullcalendar">Fullcalendar</a></li>
+    <li><a href="#gritter">Gritter</a></li>
+    <li><a href="#circfull">Circliful</a></li>
+    <li><a href="#bsslider">Slider</a></li>
+    <li><a href="#tabdrop">Tab drop</a></li>
+    <li><a href="#waypoint">Waypoint</a></li>
+  </ul>
+</li>
+              
+              
+            </ul>
+            <a class="back-to-top" href="#top">
+              Back to top
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="bs-docs-footer" role="contentinfo">
+      <div class="container">
+
+      </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
