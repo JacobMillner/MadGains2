@@ -13,13 +13,13 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
     <![endif]-->
 
-    <%= stylesheet_link_tag "sandstone", :media => "all" %>
+    <%-# stylesheet_link_tag "sandstone", :media => "all" %>
 
     <%= yield(:page_stylesheet) if content_for?(:page_stylesheet) %>
 
   </head>
   <body>
-	<%-# #render 'layouts/topMenu' -%>
+	<%= render 'layouts/topMenu' -%>
 
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
