@@ -26,18 +26,26 @@
         <%= stylesheet_link_tag "main" %>
         <!-- Custom stylesheets ( Put your own changes here ) -->
         <%= stylesheet_link_tag "custom" %>
-        <!-- Fav and touch icons -->
+        <!-- Fav and touch icons 
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/apple-touch-icon-144-precomposed.png">
-        <%= image_tag "ico/apple-touch-icon-144-precomposed.png", :rel => "apple-touch-icon-144-precomposed.png", :sizes => "144x144" %>
+          -->
+        <%= link_to "ico/apple-touch-icon-144-precomposed.png", :rel => "apple-touch-icon-144-precomposed.png", :sizes => "144x144" %>
+      
+        <!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/apple-touch-icon-114-precomposed.png"> -->
+        <%= link_to "ico/apple-touch-icon-114-precomposed.png", :rel => "apple-touch-icon-precomposed.png", :sizes => "114x114" %>
 
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/apple-touch-icon-114-precomposed.png">
-        <%= image_tag "ico/apple-touch-icon-114-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "114x114" %>
+        <!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/apple-touch-icon-72-precomposed.png"> -->
+        <%= link_to "ico/apple-touch-icon-72-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "72x72" %>
+        <!-- <link rel="apple-touch-icon-precomposed" href="img/ico/apple-touch-icon-57-precomposed.png"> -->
+        <%= link_to "ico/apple-touch-icon-precomposed.png", :rel => "apple-touch-icon-precomposed" %>
+        <!-- <link rel="icon" href="img/ico/favicon.ico" type="image/png"> -->
+        <%= link_to "img/ico/favicon.ico", :rel => "icon"  %>
 
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/apple-touch-icon-72-precomposed.png">
-        <%= image_tag "ico/apple-touch-icon-72-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "72x72" %>
-        <link rel="apple-touch-icon-precomposed" href="img/ico/apple-touch-icon-57-precomposed.png">
-        <%= image_tag "ico/apple-touch-icon-57-precomposed.png", :rel => "apple-touch-icon-precomposed" %>
-        <link rel="icon" href="img/ico/favicon.ico" type="image/png">
+
+        <!-- TODO: replace all he icons with this -->
+        <%= favicon_link_tag 'favicon.ico' %>
+
+
         <!-- Windows8 touch icon ( http://www.buildmypinnedsite.com/ )-->
         <meta name="msapplication-TileColor" content="#3399cc" />
     </head>
@@ -1167,30 +1175,33 @@
 <![endif]-->
         <!-- Bootstrap plugins -->
         <%= javascript_include_tag "js/bootstrap/bootstrap.js" %>
-        <script src="js/bootstrap/bootstrap.js"></script>
+        <!-- <script src="js/bootstrap/bootstrap.js"></script> -->
+
         <!-- Core plugins ( not remove ) -->
         <%= javascript_include_tag "js/libs/modernizr.custom.js" %>
-        <script src="js/libs/modernizr.custom.js"></script>
+        <!--  <script src="js/libs/modernizr.custom.js"></script> -->
         <!-- Handle responsive view functions -->
         <%= javascript_include_tag "js/jRespond.min.js" %>
         <script src="js/jRespond.min.js"></script>
         <!-- Custom scroll for sidebars,tables and etc. -->
         <%= javascript_include_tag "plugins/core/slimscroll/jquery.slipscroll.min.js" %>
-        <script src="plugins/core/slimscroll/jquery.slimscroll.min.js"></script>
+        <!-- <script src="plugins/core/slimscroll/jquery.slimscroll.min.js"></script> -->
         <%= javascript_include_tag "plugins/core/slimscroll/jquery.slimscroll.horizontal.min.js" %>
-        <script src="plugins/core/slimscroll/jquery.slimscroll.horizontal.min.js"></script>
+        <!-- <script src="plugins/core/slimscroll/jquery.slimscroll.horizontal.min.js"></script> -->
         <!-- Remove click delay in touch -->
         <%= javascript_include_tag "plugins/core/fastclick/fastclick.js" %>
-        <script src="plugins/core/fastclick/fastclick.js"></script>
+        <!-- <script src="plugins/core/fastclick/fastclick.js"></script> -->
         <!-- Increase jquery animation speed -->
         <%= javascript_include_tag "plugins/core/velocity/jquery.velocity.min.js" %>
-        <script src="plugins/core/velocity/jquery.velocity.min.js"></script>
+        <!-- <script src="plugins/core/velocity/jquery.velocity.min.js"></script> -->
         <!-- Quick search plugin (fast search for many widgets) -->
         <%= javascript_include_tag "plugins/core/quicksearch/jquery.quicksearch.js" %>
-        <script src="plugins/core/quicksearch/jquery.quicksearch.js"></script>
+        <!-- <script src="plugins/core/quicksearch/jquery.quicksearch.js"></script> -->
+
         <!-- Bootbox fast bootstrap modals -->
         <%= javascript_include_tag "plugins/ui/bootbox/bootbox.js" %>
-        <script src="plugins/ui/bootbox/bootbox.js"></script>
+        <!-- <script src="plugins/ui/bootbox/bootbox.js"></script> -->
+
         <!-- Other plugins ( load only nessesary plugins for every page) -->
         <script src="js/libs/date.js"></script>
         <script src="plugins/charts/flot/jquery.flot.custom.js"></script>
@@ -1216,4 +1227,3 @@
         <script src="js/pages/dashboard.js"></script>
     </body>
     </html>
-
