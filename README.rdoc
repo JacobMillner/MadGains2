@@ -1,4 +1,6 @@
-== README
+== Mad Gainz
+
+A workout app that tracks your gains in a gamified way.
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
